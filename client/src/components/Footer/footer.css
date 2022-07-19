@@ -1,0 +1,17 @@
+
+    footer {
+        align-items: center;
+        background-color: #000000;
+        bottom: 0;
+        color: #f6f4f4;
+        display: flex;
+        font-size:25px;
+        height: 40px;
+        justify-content: center;
+        position: fixed;
+        width: 1900px;
+        font-family: sans-serif;
+        
+       
+       
+    }

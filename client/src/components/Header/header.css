@@ -1,0 +1,37 @@
+
+nav {
+    overflow: hidden;
+    background-color: #0e0d10;
+    font-weight: bold;
+    font-family: monospace;
+    text-decoration: none;
+    width: 1900px;
+    
+}
+
+.goRight {
+    float: right;
+    font-size: 28px;
+    line-height: 50px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+li {
+    color: aliceblue;
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.goLeft {
+    float: left;
+    font-size: 28px;
+    line-height: 50px;
+    border-radius: 4px;
+    text-decoration: none;
+    padding-left:40px;
+    
+    color: 'whitesmoke'
+}
+

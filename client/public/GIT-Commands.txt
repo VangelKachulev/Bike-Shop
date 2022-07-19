@@ -1,0 +1,62 @@
+git branch - check current branches (shows the active one)
+git log -3 - log last 3 commit messages
+git reflog - log head changes
+git checkout [branchName] - checkout branch name 
+git checkout -b [branchName] - create new branch with [branchName] and switch to it
+git checkout -b [branchName1] [branchName2] -- Create new branch with name [branchName1] FROM [branchName2]
+git pull - pull latest changes from origin
+git add . - records the changes in the working directory. Should be followed by commit and push in order to take affect.
+git add src/app/components.* - Add and Prepare only files after src/app/components for COMMIT
+
+git commit -m 'change' - commit with message changes (should be executed after git add . )
+git commit -m 'Changes' --no-verify - commits no matter what (DOESN'T RUN PRECOMMIT)
+
+git cherry-pick [commitId] - get the changes from this commit(NOT BEFORE THAT) and apply it to selected branch + commit them.
+git push origin [branchName] - push changes TO SELECTED branch
+git push - push changes to all branches
+
+
+git rebase [branchName] - get the code from the [branchName] and apply it to your local(selected) branch
+    Reapply commits on top of selected branch - without deleting your local code! - (then use git push origin [branchName] -f)
+git rebase [branchName] -Xours -i - this reaply commits on top of your selected branch but in addition resolve conflict
+    in favor of [branchName]. With "-i" = "-interactive" you can stop after each commit you want to modify and change 
+    the message, also can squash all commits from rebase into 1.
+git merge [branchName] - Merge the changes from [branchName] and apply it to local(selected) branch. 
+    (To affect the new change - selected branch needs to be pushed to origin).
+
+git push --force - ignoring state of remote branch and setting it to the commit you're pushing into it
+git pull --theirs - pull changes to update the branch to be "up to da te" and resolve conflict in favor of remote branch.
+
+git revert [commitId] - Xtheirs - revert the changes FROM this commit (Removing all its changes)
+git reset [commitID] -- hard - Reset the changes TO THIS specific commit (Applaying all of its changes)
+git push origin +HEAD - push the last change connected to head (can be checked with git reflog)
+
+git stash - This will save your changes temporarily (hided in another directory).
+git stash pop - unstash your changes and get them back
+
+git branch -d [branchName] - Delete local branch
+git push origin -d [branchName] - Delete remote branch
+
+PROPER COMMIT MESSAGES:
+git commit -m 'DFA-39:DEV:Convert hard rem/em expressions to rem-calc'
+git commit -m 'DFA-236:FIX:Fix bug caused by search suggestions'
+
+
+
+
+
+				git merge master	git rebase master
+Keep changes from master:	--theirs		--ours
+Keep changes from feature:	--ours			--theirs
+
+
+GIT ACTIONS:
+Actions -> ondemand-deploy -> Run workflow -> select your branch, change hours to live, change to _eu, 
+UPLOAD ONLY CODE:
+Actions -> ondemand-code-upload -> Run workflow -> select your branch, change to existing sandbox, change to _eu
+
+
+To save a file in Vim / vi, press Esc key, type :w and hit Enter key
+
+
+
