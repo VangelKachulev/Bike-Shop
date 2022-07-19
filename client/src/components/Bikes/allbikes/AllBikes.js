@@ -21,33 +21,39 @@ export const AllBikes = () => {
 
 
     const showDetails = (data) => {
-        fetch(`http://localhost:3030/jsonstore/bikes/${data._id}`)
-            .then(res => res.json())
-            .then(result => {
-                setBikebikeInfo(result);
+        bikeService.getOne(data._id)
+            .then(data => setBikebikeInfo(data))
 
-            })
+            console.log(bikeInfo);
+        // fetch(`http://localhost:3030/jsonstore/bikes/${data._id}`)
+        //     .then(res => res.json())
+        //     .then(result => {
+        //         setBikebikeInfo(result);
 
-
+        //     })
     }
 
-    console.log(bikeInfo);
-
-
-
+   
     return (<div >
 
-        {/* {bikeInfo && <Deta} */}
+        {bikeInfo && <Details />}
 
         {
             bikes.length > 0
                 ? bikes.map(bike => <Bike onDetailsClicl={showDetails} key={bike._id} data={bike}></Bike>)
                 : <h1>no bikes</h1>
         }
-
-
-
     </div>)
+
+
+
+
+
+
+
+
+
+
 
 
 
