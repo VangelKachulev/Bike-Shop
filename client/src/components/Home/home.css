@@ -10,5 +10,34 @@
 
 .trade {
     position: absolute;
+    
+    font-family: fantasy;
+    color: rgba(195, 86, 46, 0.718);
+    font-size: 90px;
+    margin-left:140px;
+}
+.or {
     color: aliceblue;
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace;
+    margin-left: 9cm;
+    margin-top: 6cm;
+}
+.upgrade {
+    position: absolute;
+    
+    font-family: fantasy;
+    color: rgba(195, 86, 46, 0.823);
+    font-size: 90px;
+    margin-left: 300px;
+    /* padding-bottom: 40px; */
+    margin-top: 5px;
+}
+.yourbike {
+    color: aliceblue;
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace;
+    margin-left: 12cm;
+    margin-top: 7cm;
+  
 }

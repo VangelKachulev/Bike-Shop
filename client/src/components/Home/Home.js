@@ -5,16 +5,16 @@ export function Home() {
 
         <div className="huinq">
            
-                <h1 className="trade">TRasdasdasdasdaADE</h1>
+                <h1 className="trade">TRADE</h1>
 
 
            
-            <h3 className="your">YOUR</h3>
+            <h3 className="or">or</h3>
             <h3 className="bike">BIKE</h3>
 
-            <h1 className="find">FIND</h1>
-            <h3 className="best">BEST</h3>
-            <h3 className="offer">OFFER</h3>
+            <h1 className="upgrade">UPGRADE</h1>
+            <h3 className="yourbike">your BIKE</h3>
+            {/* <h3 className="offer">OFFER</h3> */}
 
 
 

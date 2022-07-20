@@ -1,6 +1,6 @@
 
 
-export const Details = () => {
+export const Details = (props) => {
 
 
 

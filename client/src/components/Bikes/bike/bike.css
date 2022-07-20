@@ -2,7 +2,6 @@
     background-color: rgba(103, 97, 97, 0.099);
     padding-top: 20px;
     display: inline-block;
-    
     padding-right: 40px;
     margin: 20px;
     padding-top: 0px;
@@ -10,33 +9,32 @@
 }
 
 .data {
-    /* text-align: ; */
+    text-align: center;
     color: rgb(8, 3, 3);
     font-family: monospace;
     font-size: 13px;
 }
 
-button {
+.button {
     align-items: center;
     color: rgb(246, 238, 238);
     background-color: red;
     border-style: none;
     font-size: 18px;
-    padding: 8px 30px;
+    padding: 5px 30px;
     margin-top: 1px;
+    text-decoration: none;
 }
 
 img {
     width: 250px;
 }
-   
 
 .imageDiv {
     border-style: solid;
     border-color: black;
     border-width: 3px;
     margin-top: 25px;
-    
 }
 
 h2 {
@@ -56,6 +54,4 @@ h2 {
     margin-bottom: 5px;
     margin-top: 5px;
 }
-.listItem {
-    
-}
+

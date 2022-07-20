@@ -1,0 +1,33 @@
+ .blocks {
+    font-family: cursive;
+    font-size:30px;
+    
+    
+} 
+input{
+    
+    width: 100%;
+    padding: 12px 10px;
+    margin: 8px 0;
+    
+    border: 2px solid rgba(216, 209, 209, 0.63);
+    box-sizing: border-box;
+  }
+form {
+    border: 4px solid #000000;
+    padding: 100px;
+   
+    /* margin-top: 70px; */
+    margin: 100px 700px ;
+    width: 300px;
+}
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.8;
+  }

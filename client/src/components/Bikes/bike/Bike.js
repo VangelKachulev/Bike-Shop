@@ -1,19 +1,13 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'
-import { Details } from "../details/Details";
+import { Link } from "react-router-dom"
 import "./bike.css"
 
 
 export const Bike = ({
     data,
-    onDetailsClicl,
+    onDetailsClick,
 }) => {
- 
 
-
-
-
-return (
+    return (
         <div className="bikeDiv">
 
             <ul className="listItem">
@@ -26,7 +20,7 @@ return (
                     <h3 className="frameSize">Frame size:{data.frame}</h3>
                     <h3 className="price">{data.price}</h3>
 
-                    <button onClick={()=>onDetailsClicl(data)}>More info</button>
+                    <Link to={`/bikes/${data._id}`} className="button" onClick={() => onDetailsClick(data)}>More info</Link>
 
                 </div>
             </ul>
