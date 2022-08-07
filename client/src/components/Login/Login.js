@@ -34,7 +34,12 @@ export const Login = () => {
                 .then(authData => {
 
                     userLogin(authData);
-                    navigate('/');
+                    if (authData.accessToken) {
+                        navigate('/');
+                    } else {
+                        alert(`Email or Password dont match!`)
+                    }
+
                 })
                 .catch(() => {
                     alert(`Something went wrong.Try again!`)

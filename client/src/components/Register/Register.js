@@ -43,7 +43,14 @@ export const Register = () => {
         UserService.register({ email, password })
             .then(autData => {
                 userLogin(autData);
-                navigate('/');
+                console.log(autData);
+                if (autData.accessToken) {
+
+                    navigate('/');
+                } else {
+                    alert(autData.message)
+                }
+
             })
             .catch(() => {
                 alert(`Something went wrong! Try again!`);
