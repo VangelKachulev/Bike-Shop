@@ -1,0 +1,21 @@
+.AllListedParts {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: fantasy;
+    font-size: 35px;
+    background-color: rgba(245, 245, 245, 0.524);
+    margin-top: 5px;
+}
+
+.AllPartsMainDiv {
+    background-image: url('./Parts.jpg');
+    width: 1900px;
+    height: 830px;
+    padding-top: 1px;
+}
+.NoPartsToShow {
+    color: white;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 50px;
+}

@@ -1,0 +1,26 @@
+.AllListedAdds {
+    font-family: monospace;
+    margin-top: 0px;
+    width: 1900px;
+    height: 350px;
+    background-image: url('./9-CANYON-Wallpaper-2400x1350-Gravity\ \(1\).jpg');
+}
+
+.NoBikesToShow {
+    text-align: center;
+    font-family: monospace;
+}
+
+.Honebikes {
+    position: absolute;
+    background-color: rgba(245, 245, 245, 0.645);
+    margin-top: 5px;
+    width: 1900px;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 35px;
+}
+.MainListBikes{
+    width: 1900px;
+    height: 830px;
+}

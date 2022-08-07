@@ -1,12 +1,11 @@
-
-nav {
+.Navigation {
     overflow: hidden;
     background-color: #0e0d10;
     font-weight: bold;
     font-family: monospace;
     text-decoration: none;
     width: 1900px;
-    
+    height: 100px;
 }
 
 .goRight {
@@ -15,6 +14,7 @@ nav {
     line-height: 50px;
     border-radius: 4px;
     text-decoration: none;
+    margin: 10px 10px 10px 10px;
 }
 
 li {
@@ -22,17 +22,26 @@ li {
     display: inline-block;
     padding: 20px;
     text-decoration: none;
-   
 }
 
 .goLeft {
     float: left;
-    font-size: 28px;
     line-height: 50px;
-    border-radius: 4px;
-    text-decoration: none;
-    padding-left:40px;
-    
-    color: 'whitesmoke'
+    border-radius: 2px;
+    text-decoration: line-through;
+    padding-left: 40px;
+    font-family: fantasy;
+    color: 'whitesmoke';
+    margin: 25px 0px 0px 0px;
+    padding: 0px 0px 0px 20px;
 }
 
+.on {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+.of {
+    color: whitesmoke;
+    text-decoration: none;
+}

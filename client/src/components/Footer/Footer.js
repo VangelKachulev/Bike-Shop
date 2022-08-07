@@ -6,7 +6,7 @@ export function Footer(){
         <div>
             <div >
                 <div >
-                    <p>Copyright &copy; 2022 Bikeshop</p>
+                    <p>Copyright &copy; 2022 Bikeshop Ltd. Sofia +359898414152</p>
 
 
                 </div>

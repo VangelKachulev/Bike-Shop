@@ -1,0 +1,32 @@
+.MyAds {
+    background-image: url('./second.jpg');
+    width: 1900px;
+    height: 830px;
+    padding-top: 12px;
+}
+
+.MyActiveAds {
+    background-color: rgba(255, 255, 255, 0.562);
+    /* margin-top: 0px; */
+    text-align: center;
+    width: 1900px;
+    font-size: 40px;
+    margin-top: 0px;
+    font-family: fantasy;
+    margin-bottom: 10px;
+}
+
+.UploadNow {
+    text-decoration: none;
+    text-align: center;
+    margin-left: 853px;
+    font-size: 30px;
+    position: absolute;
+    color: whitesmoke;
+    background-color: #156749bf;
+    margin-top: 73px;
+    font-family: fantasy;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+}

@@ -1,28 +1,100 @@
-
-import './login.css'
+import * as UserService from '../../services/UserService';
+import './login.css';
+import { useContext, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export const Login = () => {
 
+    const { userLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const [loginData, setLoginData] = useState({
+        email: '',
+        password: ''
+    });
+
+    const onChangeHandler = (e) => {
+        setLoginData(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }))
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const email = loginData.email;
+        const password = loginData.password;
+
+        if (password.length < 6 || email.length < 6) {
+            alert(`Username or password are too short!`);
+            return
+        } else {
+            UserService.login({ email, password })
+                .then(authData => {
+
+                    userLogin(authData);
+                    navigate('/');
+                })
+                .catch(() => {
+                    alert(`Something went wrong.Try again!`)
+                    navigate('/404');
+                    return
+                })
+        }
+
+    };
     return (
-        <form>
+        <div className="BackgroundLoginForm">
+            <form onSubmit={onSubmit} className="LoginForm">
 
-            <div className="main">
-                <div className='blocks'>
-                    <label for="username"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="username" required />
+                <div className="LoginMainDiv">
+                    <div className='Blocks'>
+                        <label htmlFor="email"><b>Email</b></label>
+                        <input
+                            className="LoginInput"
+                            type="text"
+                            placeholder="Enter email"
+                            name="email"
+                            required
+                            value={loginData.email}
+                            onChange={onChangeHandler}
+                        />
+
+                    </div>
+
+                    <div className='Blocks'>
+                        <label htmlFor="password"><b>Password</b></label>
+                        <input
+                            className="LoginInput"
+                            type="password"
+                            placeholder="Enter Password"
+                            name="password"
+                            required
+                            value={loginData.password}
+                            onChange={onChangeHandler}
+
+                        />
+
+                    </div>
+
+                    <div className='Blocks'>
+                        <button className="Btn">LOGIN</button>
+                    </div>
+
                 </div>
+                <p className="Field">
+                    <span>
+                        Need account?
 
-                <div className='blocks'>
-                    <label for="password"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="password" required />
-                </div>
+                    </span>
+                    <span><Link style={{ color: "black", fontFamily: "fantasy" }} to="/register">SIGN UP</Link> </span>
+                </p>
 
-                <div className='blocks'>
-                    <button>LOGIN</button>
-                </div>
+            </form>
+        </div>
 
-            </div>
-
-        </form>
     )
 }
+
+

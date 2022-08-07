@@ -1,17 +1,13 @@
-
-    footer {
-        align-items: center;
-        background-color: #000000;
-        bottom: 0;
-        color: #f6f4f4;
-        display: flex;
-        font-size:25px;
-        height: 40px;
-        justify-content: center;
-        position: fixed;
-        width: 1900px;
-        font-family: sans-serif;
-        
-       
-       
-    }
+footer {
+    align-items: center;
+    background-color: #000000;
+    bottom: 0;
+    color: white;
+    display: flex;
+    font-size: 25px;
+    height: 60px;
+    justify-content: center;
+    /* position: relative; */
+    width: 1900px;
+    font-family: sans-serif;
+}

@@ -1,0 +1,51 @@
+.MainPartSection {
+    display: block;
+    width: 1900px;
+    height: 830px;
+}
+
+.PartTextContainter {
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    width: 400px;
+    margin: 0px 400px 20px 200px;
+    font-family: monospace;
+}
+
+.PartImageContainer {
+    width: 500px;
+    height: 500px;
+    padding: 35px 80px 0px 300px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.ContainerImage {
+    width: 120%;
+    border-radius: 30px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.PartOptionButtons {
+    padding: 10px 25px 10px 25px;
+    margin: 0px 20px 0px 0px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #156749bf;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.BrandNamePart {
+    font-family: fantasy;
+}
+
+.DescriptionPart {
+    font-style: italic;
+}

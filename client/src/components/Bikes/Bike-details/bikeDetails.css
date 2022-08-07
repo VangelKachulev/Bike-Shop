@@ -1,0 +1,110 @@
+.MainSectionForDetails {
+    display: block;
+    width: 1900px;
+    height: auto;
+    max-height: max-content;
+}
+
+.TextContainter {
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    width: 400px;
+    margin: 0px 10px 20px 450px;
+    font-family: monospace;
+}
+
+.ImageContainer {
+    width: 600px;
+    height: 730px;
+    padding: 35px 80px 0px 100px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.Container {
+    width: 160%;
+    border-radius: 30px;
+    height: 90%;
+    object-fit: cover;
+}
+
+.OptionButtons {
+    padding: 10px 25px 10px 25px;
+    margin: 0px 20px 0px 0px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #156749bf;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.BrandName {
+    font-family: fantasy;
+}
+
+.DescriptionParagraph {
+    font-style: italic;
+}
+
+
+/* asdfasfasf */
+
+.CommentsSection {
+    border-radius: 20px;
+    border: 1px solid black;
+    margin: 5px 61px 25px 60px;
+    font-family: monospace;
+    padding: 16px 20px 21px 20p
+}
+
+.Comment {
+    border-radius: 20px;
+    display: block;
+    border: 1px solid black;
+    margin: 11px 37px 0px -1px;
+    padding: 3px 30px 10px 29px;
+    background-color: rgba(255, 228, 196, 0.571);
+    color: black;
+    font-size: 15px;
+}
+
+.MainCommentSection {
+    display: block;
+    height: 200px;
+}
+
+.TextArea {
+    width: 600px;
+    height: 100px;
+    margin: 11px 49px 2px 65px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.AddCommentBtn {
+    padding: 10px 25px 10px 25px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #156749bf;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.AuthourSection {
+    font-family: monospace;
+    text-transform: capitalize;
+}
+
+.ParagraphComment {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}

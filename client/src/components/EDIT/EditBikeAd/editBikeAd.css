@@ -1,0 +1,52 @@
+.EditForm {
+    border: 4px solid #000000;
+    padding: 60px;
+    margin:37px 900px 10px 185px;
+    /* margin: 35px 250px; */
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    height: 600px;
+    border-radius: 50px;
+}
+
+.EditInputSections {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.Update {
+    background-color: #156749bf;
+    color: white;
+    padding: 12px;
+    margin-top: 20px;
+    margin-left: 118px;
+    border: none;
+    font-size: 19px;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 50px;
+    align-items: center;
+}
+
+.MainEditDiv {
+    width: 1900px;
+    height: 830px;
+    background-image: url('./fat-bike-in-the-alps-wallpaper-1920-1080.jpg');
+    padding-top: 1px;
+   
+}
+
+.EditInputs {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 2px 0;
+    border: 2px solid rgba(216, 209, 209, 0.63);
+    box-sizing: border-box;
+}
+
+.EditLabel {
+    text-align: center;
+    font-family: fantasy;
+    font-size: 33px;
+    margin-top: 0px;
+}

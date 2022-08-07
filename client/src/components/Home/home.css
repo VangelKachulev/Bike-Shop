@@ -1,5 +1,5 @@
-.huinq {
-    background: url('../../../public/download.jpg');
+.Main {
+    background: url('./BIKEWALLPAPER.jpg');
     background-position: center;
     /* background-size: cover; */
     background-repeat: no-repeat;
@@ -8,36 +8,30 @@
     padding-top: 10px;
 }
 
-.trade {
+.Bikeshop {
     position: absolute;
-    
     font-family: fantasy;
-    color: rgba(195, 86, 46, 0.718);
+    color:whitesmoke;
     font-size: 90px;
-    margin-left:140px;
+    left: 940px;
+    top: 60px;
+    display: inline-block;
+    text-decoration: line-through;
 }
-.or {
-    color: aliceblue;
-    font-size: 50px;
-    font-family:'Courier New', Courier, monospace;
-    margin-left: 9cm;
-    margin-top: 6cm;
+
+.Trade {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 870px;
+    margin-top: 115px;
 }
-.upgrade {
-    position: absolute;
-    
+.ComStyle {
+    display:flex;
+    position:absolute;
     font-family: fantasy;
-    color: rgba(195, 86, 46, 0.823);
-    font-size: 90px;
-    margin-left: 300px;
-    /* padding-bottom: 40px; */
-    margin-top: 5px;
-}
-.yourbike {
-    color: aliceblue;
-    font-size: 50px;
-    font-family:'Courier New', Courier, monospace;
-    margin-left: 12cm;
-    margin-top: 7cm;
-  
+    color:black;
+    font-size: 40px;
+    left: 1290px;
+    top: 132px;
 }
