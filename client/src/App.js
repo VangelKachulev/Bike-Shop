@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { AuthContext } from './contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import { BikeContext } from './contexts/BikeContext';
 import { React, useState, useEffect } from 'react';
 
@@ -24,20 +24,11 @@ import { BikeDetails } from './components/Bikes/Bike-details/BikeDetails';
 import { CreateBikeAd } from './components/Create/BikeAdCreate/BikeAdCreate';
 import { EditBikeAd } from './components/EDIT/EditBikeAd/EditBikeAd';
 import * as bikeService from './services/BikeService';
-import { useLocalStorage } from './hooks/useLocalStorage';
+
 import { MyAds } from './components/MyAds/MyAds';
 
 
 function App() {
-  //user
-  const [userData, setUserData] = useLocalStorage('auth', {});
-  const userLogin = (data) => {
-    setUserData(data);
-  }
-  const userLogout = () => {
-    setUserData({});
-  };
-
   //bikes
   const [bikes, setBikes] = useState([]);
   useEffect(() => {
@@ -95,7 +86,7 @@ function App() {
 
   return (
 
-    <AuthContext.Provider value={{ userData, userLogin, userLogout }}>
+    <AuthProvider >
       <div>
 
         <Header />
@@ -124,7 +115,7 @@ function App() {
         </BikeContext.Provider>
         <Footer />
       </div>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 export default App;
