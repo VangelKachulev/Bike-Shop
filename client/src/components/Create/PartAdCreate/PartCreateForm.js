@@ -3,10 +3,12 @@ import './PartCreateForm.css';
 import * as partsService from "../../../services/PartsService";
 import { AuthContext } from '../../../contexts/AuthContext';
 import { useContext, useState } from 'react';
+import { PartsContext } from '../../../contexts/PartsContext';
 
-export const CreatePartAd = ({ addPartHandler }) => {
+export const CreatePartAd = () => {
     const navigate = useNavigate();
     const { userData } = useContext(AuthContext);
+    const { addPartHandler } = useContext(PartsContext);
 
     const [partData, setPartData] = useState({
         type: '',

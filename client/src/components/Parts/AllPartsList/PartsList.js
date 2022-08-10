@@ -1,8 +1,10 @@
 import "./allPartsList.css";
 import { PartsItem } from "../PartItem/PartsItem";
+import { useContext } from "react";
+import { PartsContext } from "../../../contexts/PartsContext";
 
-export const PartsList = ({ parts }) => {
-
+export const PartsList = () => {
+    const { parts } = useContext(PartsContext);
     return (
         <div className="AllPartsMainDiv">
 

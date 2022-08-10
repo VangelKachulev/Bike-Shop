@@ -43,7 +43,7 @@ export const Register = () => {
         UserService.register({ email, password })
             .then(autData => {
                 userLogin(autData);
-                console.log(autData);
+                
                 if (autData.accessToken) {
 
                     navigate('/');
@@ -52,8 +52,8 @@ export const Register = () => {
                 }
 
             })
-            .catch(() => {
-                alert(`Something went wrong! Try again!`);
+            .catch((err) => {
+               console.log(err);
             });
     };
     return (<div className="BackGroundRegisterForm">

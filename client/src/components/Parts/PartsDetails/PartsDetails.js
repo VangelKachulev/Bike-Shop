@@ -4,12 +4,13 @@ import * as partService from '../../../services/PartsService';
 import "./partDetails.css";
 
 import { AuthContext } from '../../../contexts/AuthContext';
+import { PartsContext, PartsProvider } from '../../../contexts/PartsContext';
 
-export const PartDetails = ({ emptyPartsState }) => {
+export const PartDetails = () => {
 
     const navigate = useNavigate();
     const { userData } = useContext(AuthContext);
-
+    const { emptyPartsState } = useContext(PartsContext);
     const [partInfo, setPartInfo] = useState({});
     const { id } = useParams();
 

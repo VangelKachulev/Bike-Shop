@@ -4,9 +4,12 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { BikeItem } from "../Bikes/Bike-item/BikeItem";
 import { PartsItem } from "../Parts/PartItem/PartsItem";
 import styles from './myads.module.css';
+import { PartsContext } from "../../contexts/PartsContext";
 
-export const MyAds = ({ parts }) => {
+export const MyAds = () => {
     const { bikes } = useContext(BikeContext);
+    const { parts } = useContext(PartsContext);
+
     const { userData } = useContext(AuthContext);
 
     const myBikes = bikes.filter(x => x._ownerId === userData._id);
