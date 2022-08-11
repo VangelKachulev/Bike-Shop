@@ -23,8 +23,7 @@ export const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        const email = loginData.email;
-        const password = loginData.password;
+        const { email, password } = loginData;
 
         if (password.length < 6 || email.length < 6) {
             alert(`Username or password are too short!`);

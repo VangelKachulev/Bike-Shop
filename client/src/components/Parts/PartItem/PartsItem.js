@@ -16,7 +16,7 @@ export const PartsItem = ({ data }) => {
                     <h3 className="FrameSize">{data.brand}</h3>
                     <h3 className="Price">${data.price}</h3>
 
-                    <Link to={`/parts/${data._id}`} data={data._id} className="MoreInfoBtn" >More info</Link>
+                    <Link to={`/parts/${data._id}`} className="MoreInfoBtn" >More info</Link>
 
                 </div>
             </ul>

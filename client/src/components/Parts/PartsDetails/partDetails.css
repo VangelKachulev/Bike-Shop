@@ -1,7 +1,8 @@
 .MainPartSection {
     display: block;
     width: 1900px;
-    height: 830px;
+    height: auto;
+    max-height: max-content;
 }
 
 .PartTextContainter {
@@ -47,5 +48,59 @@
 }
 
 .DescriptionPart {
+    font-style: italic;
+}
+.PartCommentSection {
+    border-radius: 20px;
+    border: 1px solid black;
+    margin: 5px 61px 25px 60px;
+    font-family: monospace;
+    padding: 16px 20px 21px 20p
+}
+
+.SingleComment {
+    border-radius: 20px;
+    display: block;
+    border: 1px solid black;
+    margin: 11px 37px 0px -1px;
+    padding: 3px 30px 10px 29px;
+    background-color: rgba(255, 228, 196, 0.571);
+    color: black;
+    font-size: 15px;
+}
+
+.MainComentSectionParts {
+    display: block;
+    height: 200px;
+}
+
+.InputAreaComment {
+    width: 600px;
+    height: 100px;
+    margin: 11px 49px 2px 65px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.AddCommentButton {
+    padding: 10px 25px 10px 25px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #156749bf;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.CommentAuthorPart {
+    font-family: monospace;
+    text-transform: capitalize;
+}
+
+.CommentText {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
 }

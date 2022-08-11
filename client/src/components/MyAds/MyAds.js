@@ -17,7 +17,7 @@ export const MyAds = () => {
 
     return (<div className={styles.MyAds}>
 
-        {(myBikes.length > 0 || myParts.length)
+        {(myBikes.length > 0 || myParts.length > 0)
 
             && <div>
                 < h1 className={styles.MyActiveAds}>My active ads</h1>

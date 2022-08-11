@@ -6,16 +6,17 @@ import { useNavigate } from "react-router-dom";
 
 export const Logout = () => {
     const navigate = useNavigate()
-    const { userData, userLogout } = useContext(AuthContext);
+    const { token, userLogout } = useContext(AuthContext);
 
     useEffect(() => {
-        UserService.logout(userData.accessToken)
+        UserService.logout(token)
             .then(() => {
                 userLogout();
                 navigate('/')
 
             })
-            .catch(() => {
+            .catch((err) => {
+                console.log(err);
                 navigate('/')
             });
     }, [])

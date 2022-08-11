@@ -1,15 +1,17 @@
-import { useLocation, useNavigate } from 'react-router-dom';
 import './editBikeAd.css';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import * as BikeService from '../../../services/BikeService';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { BikeContext } from '../../../contexts/BikeContext';
 
 export const EditBikeAd = () => {
-    const { userData } = useContext(AuthContext);
+    const { token } = useContext(AuthContext);
     const { editBikeState } = useContext(BikeContext);
+
     const navigate = useNavigate();
     const location = useLocation();
+
     const { bikeInfo } = location.state;
 
     const [bikeData, setBikeData] = useState({
@@ -26,12 +28,11 @@ export const EditBikeAd = () => {
         setBikeData(state => ({
             ...state,
             [e.target.name]: e.target.value
-        }))
+        }));
     };
 
     const updateInfo = (e) => {
         e.preventDefault();
-        const token = userData.accessToken;
 
         BikeService.update(token, bikeData, bikeInfo._id)
             .then(result => {

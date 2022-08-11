@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 
 export function Header() {
-    const { userData } = useContext(AuthContext);
+    const { token, userData } = useContext(AuthContext);
 
     const style = {
         textDecoration: 'none',
@@ -28,7 +28,7 @@ export function Header() {
 
             <h1 className='goLeft'><Link style={style} to="/" >BIKESHOP</Link></h1>
 
-            {userData.accessToken
+            {token
                 ? <ul className="goRight">
                     <li style={styleUser} to="/">Welcome, {userData.email}!</li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/bikes">Bikes</NavLink></li>

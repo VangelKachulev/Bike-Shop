@@ -21,9 +21,7 @@ export const AllBikesList = () => {
                             ? bikes.map(bike => <BikeItem key={bike._id} data={bike}></BikeItem>)
                             : <h1 className="NoBikesToShow">Nothing to show</h1>
                     }
-
                 </div>
-
             </div>
         </div>
 

@@ -7,10 +7,10 @@ import { PartsContext } from '../../../contexts/PartsContext';
 
 export const CreatePartAd = () => {
     const navigate = useNavigate();
-    const { userData } = useContext(AuthContext);
+    const { token } = useContext(AuthContext);
     const { addPartHandler } = useContext(PartsContext);
 
-    const [partData, setPartData] = useState({
+    const [formData, setFormData] = useState({
         type: '',
         brand: '',
         imageUrl: '',
@@ -20,7 +20,7 @@ export const CreatePartAd = () => {
     });
 
     const onChangeHandler = (e) => {
-        setPartData(state => ({
+        setFormData(state => ({
             ...state,
             [e.target.name]: e.target.value
         }))
@@ -28,12 +28,12 @@ export const CreatePartAd = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        const token = userData.accessToken;
-        partsService.post(token, partData)
+
+        partsService.post(token, formData)
             .then(result => {
                 addPartHandler(result);
 
-                navigate('/myAds')
+                navigate('/myAds');
             })
     };
 
@@ -54,7 +54,7 @@ export const CreatePartAd = () => {
                             className="UploadAdInput"
                             type="text"
                             required
-                            value={partData.type}
+                            value={formData.type}
                             onChange={onChangeHandler}
                         />
                     </div>
@@ -67,7 +67,7 @@ export const CreatePartAd = () => {
                             type="text"
                             name="brand"
                             required
-                            value={partData.brand}
+                            value={formData.brand}
                             onChange={onChangeHandler}
                         />
                     </div>
@@ -80,7 +80,7 @@ export const CreatePartAd = () => {
                             type="text"
                             name="imageUrl"
                             required
-                            value={partData.imageUrl}
+                            value={formData.imageUrl}
                             onChange={onChangeHandler}
 
                         />
@@ -93,7 +93,7 @@ export const CreatePartAd = () => {
                             type="text"
                             name="price"
                             required
-                            value={partData.price}
+                            value={formData.price}
                             onChange={onChangeHandler}
 
                         />
@@ -107,7 +107,7 @@ export const CreatePartAd = () => {
                             type="text"
                             name="description"
                             required
-                            value={partData.description}
+                            value={formData.description}
                             onChange={onChangeHandler}
 
                         />
@@ -120,7 +120,7 @@ export const CreatePartAd = () => {
                             type="text"
                             name="phone"
                             required
-                            value={partData.phone}
+                            value={formData.phone}
                             onChange={onChangeHandler}
                         />
                     </div>

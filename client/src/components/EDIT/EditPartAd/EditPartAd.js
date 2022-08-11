@@ -8,10 +8,11 @@ import { PartsContext } from "../../../contexts/PartsContext";
 export const EditPartAd = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { partInfo } = location.state;
-    const { userData } = useContext(AuthContext);
+    
+    const { token } = useContext(AuthContext);
     const { editPartState } = useContext(PartsContext);
-
+    
+    const { partInfo } = location.state;
     const [partData, setPartData] = useState({
         type: partInfo.type,
         brand: partInfo.brand,
@@ -30,7 +31,6 @@ export const EditPartAd = () => {
     const updateInfo = (e) => {
         e.preventDefault();
 
-        const token = userData.accessToken;
         PartService.update(token, partData, partInfo._id)
             .then(result => {
 

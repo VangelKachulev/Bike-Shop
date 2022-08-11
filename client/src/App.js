@@ -26,12 +26,9 @@ import { MyAds } from './components/MyAds/MyAds';
 import { PrivateGuard } from './PrivateGuard/PrivateGuard';
 
 function App() {
-
   return (
-
     <AuthProvider >
       <div>
-
         <Header />
         <PartsProvider>
           <BikeProvider >
@@ -43,15 +40,14 @@ function App() {
               <Route path='/login' element={<Login />}></Route>
               <Route path='/register' element={<Register />}></Route>
 
-              <Route element={<PrivateGuard />}>
 
+              <Route element={<PrivateGuard />}>
                 <Route path='/myads' element={<MyAds />}></Route>
                 <Route path='/bikes/:id/edit' element={<EditBikeAd />}></Route>
                 <Route path='/createBikeAd' element={<CreateBikeAd />}></Route>
                 <Route path='/parts/:id/edit' element={<EditPartAd />}></Route>
                 <Route path='/createPartAd' element={<CreatePartAd />}></Route>
                 <Route path='/logout' element={<Logout />}></Route>
-
               </Route>
 
               <Route path='/bikes' element={<AllBikesList />}></Route>

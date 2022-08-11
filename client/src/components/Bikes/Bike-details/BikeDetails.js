@@ -10,23 +10,18 @@ export const BikeDetails = () => {
 
     const navigate = useNavigate();
     const { emptyBikeState } = useContext(BikeContext);
-    const { userData } = useContext(AuthContext);
+    const { token, userData } = useContext(AuthContext);
     const { id } = useParams();
 
     const [currentComents, setCurrentComments] = useState([]);
     const [bikeInfo, setBikeInfo] = useState({});
-    const token = userData.accessToken;
-
 
     useEffect(() => {
         bikeService.getOne(id)
             .then(data => setBikeInfo(data));
 
         commentService.getAllComments()
-            .then(res => {
-                console.log(res);
-                setCurrentComments(Object.values(res));
-            })
+            .then(res => setCurrentComments(Object.values(res)));
     }, []);
 
     const addCommentHandler = (e) => {
@@ -37,10 +32,10 @@ export const BikeDetails = () => {
         const comment = comentData.get('comment');
 
         const data = {
-            gameId: id,
+            bikeId: id,
             author: userData.email,
             comment: comment
-        }
+        };
 
         if (comment.length < 1) {
             alert(`You can't send empty comment!`);
@@ -52,11 +47,11 @@ export const BikeDetails = () => {
                 setCurrentComments(state => [
                     ...state,
                     result
-                ])
-            })
+                ]);
+            });
 
         e.target.children[0].value = '';
-    }
+    };
 
     const deletBikeAd = () => {
         const confirmation = window.confirm('Are you sure you want to delete this ad?');
@@ -64,10 +59,8 @@ export const BikeDetails = () => {
             bikeService.removeAd(token, bikeInfo._id);
             emptyBikeState(bikeInfo._id);
             navigate('/myAds');
-        }
-
-
-    }
+        };
+    };
 
     return (
         <div className='MainSectionForDetails'>
@@ -99,7 +92,7 @@ export const BikeDetails = () => {
 
                 <ul >
 
-                    {(currentComents?.map(x => bikeInfo._id === x.gameId
+                    {(currentComents?.map(x => bikeInfo._id === x.bikeId
                         && <li className="Comment" key={x._id}>
                             <h3 className="AuthourSection" >{x.author}:</h3>
                             <p className="ParagraphComment">{x.comment}</p>

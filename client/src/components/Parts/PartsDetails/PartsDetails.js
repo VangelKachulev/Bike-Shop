@@ -1,25 +1,58 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import * as partService from '../../../services/PartsService';
+import * as commentService from '../../../services/CommentService';
 import "./partDetails.css";
 
 import { AuthContext } from '../../../contexts/AuthContext';
-import { PartsContext, PartsProvider } from '../../../contexts/PartsContext';
+import { PartsContext } from '../../../contexts/PartsContext';
 
 export const PartDetails = () => {
 
     const navigate = useNavigate();
-    const { userData } = useContext(AuthContext);
+    const { token, userData } = useContext(AuthContext);
     const { emptyPartsState } = useContext(PartsContext);
-    const [partInfo, setPartInfo] = useState({});
     const { id } = useParams();
-    const token = userData.accessToken;
+
+    const [partInfo, setPartInfo] = useState({});
+    const [currentComents, setCurrentComments] = useState([]);
+
     useEffect(() => {
         partService.getOne(id)
             .then(data => setPartInfo(data));
 
+        commentService.getAllComments()
+            .then(res => setCurrentComments(Object.values(res)));
     }, []);
 
+    const addCommentHandler = (e) => {
+
+        e.preventDefault();
+
+        const comentData = new FormData(e.target);
+        const comment = comentData.get('comment');
+
+        const data = {
+            partId: id,
+            author: userData.email,
+            comment: comment
+        };
+
+        if (comment.length < 1) {
+            alert(`You can't send empty comment!`);
+            return
+        };
+
+        commentService.createComment(token, data)
+            .then(result => {
+                setCurrentComments(state => [
+                    ...state,
+                    result
+                ])
+            });
+
+        e.target.children[0].value = '';
+    };
     const deletPartAd = () => {
         const confirmation = window.confirm('Are you sure you want to delete this ad?');
         if (confirmation) {
@@ -27,7 +60,7 @@ export const PartDetails = () => {
             partService.removeAd(token, partInfo._id);
             emptyPartsState(partInfo._id);
             navigate('/myAds');
-        }
+        };
     };
 
 
@@ -55,6 +88,41 @@ export const PartDetails = () => {
                     </div>
                 }
             </div>
+            <div className="PartCommentSection">
+                <h2>Comments:</h2>
+
+                <ul >
+
+                    {(currentComents?.map(x => partInfo._id === x.partId
+                        && <li className="SingleComment" key={x._id}>
+                            <h3 className="CommentAuthorPart" >{x.author}:</h3>
+                            <p className="CommentText">{x.comment}</p>
+                        </li>))
+                        || (<h1>No comments</h1>)
+
+                    }
+                </ul>
+            </div>
+            {userData.accessToken ?
+                <div className="MainComentSectionParts">
+
+                    <form onSubmit={addCommentHandler}>
+                        <input
+                            className="InputAreaComment"
+                            name='comment'
+                            placeholder="Add new comment.."
+                        >
+                        </input>
+                        <button
+                            className="AddCommentButton"
+                            type="submit"
+                            value='Add comment'> Comment
+                        </button>
+                    </form>
+                </div>
+                : null
+            }
+
         </div >
     )
 }

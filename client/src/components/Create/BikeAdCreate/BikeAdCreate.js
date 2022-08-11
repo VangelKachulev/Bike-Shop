@@ -8,10 +8,10 @@ import { AuthContext } from '../../../contexts/AuthContext';
 export const CreateBikeAd = () => {
 
     const { addBikeHandler } = useContext(BikeContext);
-    const { userData } = useContext(AuthContext);
+    const { token } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const [createData, setCreateData] = useState({
+    const [formData, setFormData] = useState({
         brand: '',
         frame: '',
         imageUrl: '',
@@ -19,21 +19,21 @@ export const CreateBikeAd = () => {
         wheelSize: '',
         description: '',
         phone: '',
-       
+
     });
 
     const onChangeHandler = (e) => {
-        setCreateData(state => ({
+        setFormData(state => ({
             ...state,
             [e.target.name]: e.target.value
-        }));;
+        }));
 
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
-        const token = userData.accessToken;
-        BikeService.post(token, createData)
+
+        BikeService.post(token, formData)
             .then(result => {
                 addBikeHandler(result);
 
@@ -57,7 +57,7 @@ export const CreateBikeAd = () => {
                             className="BikeUploadAdInput"
                             type="text"
                             required
-                            value={createData.brand}
+                            value={formData.brand}
                             onChange={onChangeHandler}
                         />
                     </div>
@@ -70,7 +70,7 @@ export const CreateBikeAd = () => {
                             type="text"
                             name="frame"
                             required
-                            value={createData.frame}
+                            value={formData.frame}
                             onChange={onChangeHandler}
                         />
                     </div>
@@ -83,7 +83,7 @@ export const CreateBikeAd = () => {
                             type="text"
                             name="imageUrl"
                             required
-                            value={createData.imageUrl}
+                            value={formData.imageUrl}
                             onChange={onChangeHandler}
                         />
                     </div>
@@ -95,7 +95,7 @@ export const CreateBikeAd = () => {
                             type="text"
                             name="price"
                             required
-                            value={createData.price}
+                            value={formData.price}
                             onChange={onChangeHandler}
                         />
                     </div>
@@ -107,7 +107,7 @@ export const CreateBikeAd = () => {
                             type="text"
                             name="wheelSize"
                             required
-                            value={createData.wheelSize}
+                            value={formData.wheelSize}
                             onChange={onChangeHandler}
                         />
                     </div>
@@ -119,7 +119,7 @@ export const CreateBikeAd = () => {
                             type="text"
                             name="description"
                             required
-                            value={createData.description}
+                            value={formData.description}
                             onChange={onChangeHandler}
                         />
                     </div>
@@ -131,7 +131,7 @@ export const CreateBikeAd = () => {
                             type="text"
                             name="phone"
                             required
-                            value={createData.phone}
+                            value={formData.phone}
                             onChange={onChangeHandler}
 
                         />

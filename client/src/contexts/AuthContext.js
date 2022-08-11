@@ -6,7 +6,8 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
 
     const [userData, setUserData] = useLocalStorage('auth', {});
-
+    const token = userData.accessToken;
+    
     const userLogin = (data) => {
         setUserData(data);
     };
@@ -15,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     };
 
 
-    return <AuthContext.Provider value={{ userData, userLogin, userLogout }}>
+    return <AuthContext.Provider value={{ userData, token, userLogin, userLogout }}>
         {children}
     </AuthContext.Provider>
 
