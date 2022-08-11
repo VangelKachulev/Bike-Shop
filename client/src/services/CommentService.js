@@ -26,6 +26,7 @@ export const getAllComments = async () => {
         return result;
 
     } catch (err) {
+      
         console.log(err);
     }
 };

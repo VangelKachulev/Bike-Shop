@@ -15,25 +15,37 @@ export const BikeDetails = () => {
 
     const [currentComents, setCurrentComments] = useState([]);
     const [bikeInfo, setBikeInfo] = useState({});
+    const token = userData.accessToken;
+
 
     useEffect(() => {
         bikeService.getOne(id)
             .then(data => setBikeInfo(data));
-    }, []);
 
-    const token = userData.accessToken;
-    commentService.createComment(token, {});
+        commentService.getAllComments()
+            .then(res => {
+                console.log(res);
+                setCurrentComments(Object.values(res));
+            })
+    }, []);
 
     const addCommentHandler = (e) => {
 
         e.preventDefault();
+
         const comentData = new FormData(e.target);
         const comment = comentData.get('comment');
+
         const data = {
             gameId: id,
             author: userData.email,
             comment: comment
         }
+
+        if (comment.length < 1) {
+            alert(`You can't send empty comment!`);
+            return
+        };
 
         commentService.createComment(token, data)
             .then(result => {
@@ -42,23 +54,20 @@ export const BikeDetails = () => {
                     result
                 ])
             })
-            .catch((err) => {
-                console.log(err);
-            })
+
         e.target.children[0].value = '';
     }
 
     const deletBikeAd = () => {
-        const token = userData.accessToken;
-        bikeService.removeAd(token, bikeInfo._id);
-        emptyBikeState(bikeInfo._id);
-        navigate('/myAds');
-    }
+        const confirmation = window.confirm('Are you sure you want to delete this ad?');
+        if (confirmation) {
+            bikeService.removeAd(token, bikeInfo._id);
+            emptyBikeState(bikeInfo._id);
+            navigate('/myAds');
+        }
 
-    useEffect(() => {
-        commentService.getAllComments()
-            .then(res => setCurrentComments(res))
-    }, []);
+
+    }
 
     return (
         <div className='MainSectionForDetails'>

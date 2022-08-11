@@ -3,12 +3,14 @@ import './editPartAd.css'
 import * as PartService from '../../../services/PartsService';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
+import { PartsContext } from "../../../contexts/PartsContext";
 
-export const EditPartAd = ({ editPartState }) => {
+export const EditPartAd = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { partInfo } = location.state;
     const { userData } = useContext(AuthContext);
+    const { editPartState } = useContext(PartsContext);
 
     const [partData, setPartData] = useState({
         type: partInfo.type,

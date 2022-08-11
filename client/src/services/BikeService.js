@@ -3,9 +3,8 @@ const url = `http://localhost:3030/data/bikes/`
 export const getAll = async () => {
 
     try {
-        const response = await fetch(url)
+        const response = await fetch(url);
         const result = await response.json()
-
         return result;
 
     } catch (err) {
@@ -77,6 +76,7 @@ export const update = async (token, data, id) => {
         console.log(err);
     }
 }
+
 
 
 

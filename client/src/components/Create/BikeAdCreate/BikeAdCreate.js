@@ -19,6 +19,7 @@ export const CreateBikeAd = () => {
         wheelSize: '',
         description: '',
         phone: '',
+       
     });
 
     const onChangeHandler = (e) => {

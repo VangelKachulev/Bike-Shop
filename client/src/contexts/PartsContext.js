@@ -14,9 +14,7 @@ export const PartsProvider = ({ children }) => {
                 setParts(Object.values(data))
 
             })
-            .catch((err) => {
-                console.log(err)
-            });
+           
     }, []);
 
     const addPartHandler = (partData) => {

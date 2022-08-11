@@ -13,7 +13,7 @@ export const PartDetails = () => {
     const { emptyPartsState } = useContext(PartsContext);
     const [partInfo, setPartInfo] = useState({});
     const { id } = useParams();
-
+    const token = userData.accessToken;
     useEffect(() => {
         partService.getOne(id)
             .then(data => setPartInfo(data));
@@ -21,10 +21,13 @@ export const PartDetails = () => {
     }, []);
 
     const deletPartAd = () => {
-        const token = userData.accessToken;
-        partService.removeAd(token, partInfo._id);
-        emptyPartsState(partInfo._id);
-        navigate('/myAds');
+        const confirmation = window.confirm('Are you sure you want to delete this ad?');
+        if (confirmation) {
+
+            partService.removeAd(token, partInfo._id);
+            emptyPartsState(partInfo._id);
+            navigate('/myAds');
+        }
     };
 
 
