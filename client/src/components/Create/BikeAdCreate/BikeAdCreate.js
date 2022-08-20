@@ -32,17 +32,36 @@ export const CreateBikeAd = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        if (!isNaN(formData.phone) && !isNaN(formData.price)) {
 
-        BikeService.post(token, formData)
-            .then(result => {
-                addBikeHandler(result);
+            BikeService.post(token, formData)
+                .then(result => {
+                    addBikeHandler(result);
 
-                navigate('/myAds')
-            });
+                    navigate('/myAds')
+                });
+        }
     };
 
+
+
+    const [error, setError] = useState(false);
+    const priceAndPhoneCheck = (e) => {
+
+        if (!isNaN(e.target.value)) {
+            setError(state => ({
+                ...state,
+                [e.target.name]: false
+            }))
+        } else {
+            setError(state => ({
+                ...state,
+                [e.target.name]: true
+            }))
+        }
+    }
     return (
-        <div className='BikeBackGroundUploadForm'>
+        < div className='BikeBackGroundUploadForm' >
             <form className="BikeUploadForm" onSubmit={onSubmit}>
                 <h2 className='BikeLabelForCreateForm'>UPLOAD YOUR BIKE</h2>
                 <div className='BikeSwitchButton'>
@@ -97,7 +116,9 @@ export const CreateBikeAd = () => {
                             required
                             value={formData.price}
                             onChange={onChangeHandler}
+                            onBlur={priceAndPhoneCheck}
                         />
+                        {error.price && <p className='Validation'>Add valid price!</p>}
                     </div>
                     <div className='BikeInputSections'>
                         <label htmlFor="wheelSize"><b>Wheel size</b></label>
@@ -110,6 +131,7 @@ export const CreateBikeAd = () => {
                             value={formData.wheelSize}
                             onChange={onChangeHandler}
                         />
+
                     </div>
                     <div className='BikeInputSections'>
                         <label htmlFor="description"><b>Description</b></label>
@@ -133,17 +155,24 @@ export const CreateBikeAd = () => {
                             required
                             value={formData.phone}
                             onChange={onChangeHandler}
+                            onBlur={priceAndPhoneCheck}
 
                         />
+
+                        {error.phone && <p className='Validation'>The phone number is not valid!</p>}
                     </div>
                     <div className='BikeInputSections'>
-                        <button className="BikeUploadAdBtm">Upload</button>
+
+                        <button disabled={!formData} className="BikeUploadAdBtm">Upload</button>
+
+
                     </div>
 
                 </div>
 
 
             </form>
-        </div>
+        </div >
+
     )
 }

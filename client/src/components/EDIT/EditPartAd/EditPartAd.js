@@ -8,10 +8,10 @@ import { PartsContext } from "../../../contexts/PartsContext";
 export const EditPartAd = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    
+
     const { token } = useContext(AuthContext);
     const { editPartState } = useContext(PartsContext);
-    
+
     const { partInfo } = location.state;
     const [partData, setPartData] = useState({
         type: partInfo.type,
@@ -30,15 +30,30 @@ export const EditPartAd = () => {
 
     const updateInfo = (e) => {
         e.preventDefault();
+        if (!isNaN(partData.phone) && !isNaN(partData.price)) {
+            PartService.update(token, partData, partInfo._id)
+                .then(result => {
 
-        PartService.update(token, partData, partInfo._id)
-            .then(result => {
-
-                editPartState(result._id, result);
-                navigate(`/parts/${result._id}`);
-            })
+                    editPartState(result._id, result);
+                    navigate(`/parts/${result._id}`);
+                })
+        }
     };
+    const [error, setError] = useState(false);
+    const priceAndPhoneCheck = (e) => {
 
+        if (!isNaN(e.target.value)) {
+            setError(state => ({
+                ...state,
+                [e.target.name]: false
+            }))
+        } else {
+            setError(state => ({
+                ...state,
+                [e.target.name]: true
+            }))
+        }
+    };
     return ((<div className='EditPart'>
 
         <form onSubmit={updateInfo} className="EditPartForm" >
@@ -93,7 +108,9 @@ export const EditPartAd = () => {
                         required
                         value={partData.price}
                         onChange={onChangeHandler}
+                        onBlur={priceAndPhoneCheck}
                     />
+                    {error.price && <p className='Validation'>Add valid price!</p>}
                 </div>
 
                 <div className='EditPartSect'>
@@ -118,7 +135,9 @@ export const EditPartAd = () => {
                         required
                         defaultValue={partData.phone}
                         onChange={onChangeHandler}
+                        onBlur={priceAndPhoneCheck}
                     />
+                    {error.phone && <p className='Validation'>Add valid phone!</p>}
                 </div>
                 <div className='EditPartSect'>
                     <button className="UpdatePartAD">UPDATE</button>

@@ -14,7 +14,7 @@ export const Register = () => {
         password: '',
         repeatPassword: ''
     });
-
+    const { email, password, repeatPassword } = registerData;
     const onChangeHandler = (e) => {
         setRegisterData(state => ({
             ...state,
@@ -25,25 +25,16 @@ export const Register = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        const { email, password, repeatPassword } = registerData;
-        if (email.length < 6) {
-            alert(`Your email must be at least 6 symbols!`);
-            return;
-        };
-        if (password.length < 6) {
-            alert(`Your password must be at least 6 symbols!`);
-            return;
-        };
-        if (password !== repeatPassword) {
-            alert(`Password don't match!`)
-            return;
-        };
 
+        if (password !== repeatPassword || email.length < 6 || password.length < 6) {
+            console.log(`nope`);
+            return
+        };
 
         UserService.register({ email, password })
             .then(autData => {
                 userLogin(autData);
-                
+
                 if (autData.accessToken) {
 
                     navigate('/');
@@ -53,9 +44,37 @@ export const Register = () => {
 
             })
             .catch((err) => {
-               console.log(err);
+                console.log(err);
             });
     };
+    const [error, setError] = useState(false);
+    const inputLengthCheck = e => {
+        if (e.target.value.length < 6) {
+            setError(state => ({
+                ...state,
+                [e.target.name]: true
+            }));
+        } else {
+            setError(state => ({
+                ...state,
+                [e.target.name]: false
+            }));
+        }
+    }
+    const [passwordMatch, setPasswordMatch] = useState(false);
+    const passWordsCheck = e => {
+        if (password !== repeatPassword) {
+            setPasswordMatch(state => ({
+                ...state,
+                [e.target.name]: true
+            }));
+        } else {
+            setPasswordMatch(state => ({
+                ...state,
+                [e.target.name]: false
+            }));
+        }
+    }
     return (<div className="BackGroundRegisterForm">
         <form onSubmit={onSubmit} className="RegisterForm">
             <h2 className='MainLabel'>Register</h2>
@@ -71,8 +90,9 @@ export const Register = () => {
                         required
                         value={registerData.email}
                         onChange={onChangeHandler}
-
+                        onBlur={inputLengthCheck}
                     />
+                    {error.email && <p className='Validation'>Email must be at least 6 symbols!</p>}
                 </div>
 
                 <div className='Blocks'>
@@ -86,7 +106,9 @@ export const Register = () => {
                         required
                         value={registerData.password}
                         onChange={onChangeHandler}
+                        onBlur={inputLengthCheck}
                     />
+                    {error.password && <p className='Validation'>Password must be at least 6 symbols!</p>}
                 </div>
 
                 <div className='Blocks'>
@@ -100,8 +122,10 @@ export const Register = () => {
                         required
                         value={registerData.repeatPassword}
                         onChange={onChangeHandler}
-
+                        onBlur={passWordsCheck}
                     />
+                    {passwordMatch.repeatPassword && <p className='Validation'>Passwords dont match!</p>}
+
                 </div>
 
                 <div className='Blocks'>

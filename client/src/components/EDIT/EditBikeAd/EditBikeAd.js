@@ -33,18 +33,33 @@ export const EditBikeAd = () => {
 
     const updateInfo = (e) => {
         e.preventDefault();
+        if (!isNaN(bikeData.phone) && !isNaN(bikeData.price)) {
+            BikeService.update(token, bikeData, bikeInfo._id)
+                .then(result => {
 
-        BikeService.update(token, bikeData, bikeInfo._id)
-            .then(result => {
-
-                editBikeState(result._id, result);
-                navigate(`/bikes/${result._id}`);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+                    editBikeState(result._id, result);
+                    navigate(`/bikes/${result._id}`);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        }
     };
+    const [error, setError] = useState(false);
+    const priceAndPhoneCheck = (e) => {
 
+        if (!isNaN(e.target.value)) {
+            setError(state => ({
+                ...state,
+                [e.target.name]: false
+            }))
+        } else {
+            setError(state => ({
+                ...state,
+                [e.target.name]: true
+            }))
+        }
+    }
     return (<div className='MainEditDiv'>
 
         <form onSubmit={updateInfo} className="EditForm" >
@@ -99,7 +114,9 @@ export const EditBikeAd = () => {
                         required
                         value={bikeData.price}
                         onChange={onChangeHandler}
+                        onBlur={priceAndPhoneCheck}
                     />
+                     {error.price && <p className='Validation'>Add valid price!</p>}
                 </div>
                 <div className='EditInputSections'>
                     <label htmlFor="wheelSize"><b>Wheel size</b></label>
@@ -135,7 +152,9 @@ export const EditBikeAd = () => {
                         required
                         value={bikeData.phone}
                         onChange={onChangeHandler}
+                        onBlur={priceAndPhoneCheck}
                     />
+                     {error.phone && <p className='Validation'>Add valid phone!</p>}
                 </div>
                 <div className='EditInputSections'>
                     <button className="Update">UPDATE</button>

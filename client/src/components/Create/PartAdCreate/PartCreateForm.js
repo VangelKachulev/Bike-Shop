@@ -28,14 +28,32 @@ export const CreatePartAd = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        if (!isNaN(formData.phone) && !isNaN(formData.price)) {
 
-        partsService.post(token, formData)
-            .then(result => {
-                addPartHandler(result);
+            partsService.post(token, formData)
+                .then(result => {
+                    addPartHandler(result);
 
-                navigate('/myAds');
-            })
+                    navigate('/myAds')
+                });
+        }
     };
+    
+    const [error, setError] = useState(false);
+    const priceAndPhoneCheck = (e) => {
+
+        if (!isNaN(e.target.value)) {
+            setError(state => ({
+                ...state,
+                [e.target.name]: false
+            }))
+        } else {
+            setError(state => ({
+                ...state,
+                [e.target.name]: true
+            }))
+        }
+    }
 
     return (
 
@@ -95,8 +113,9 @@ export const CreatePartAd = () => {
                             required
                             value={formData.price}
                             onChange={onChangeHandler}
-
+                            onBlur={priceAndPhoneCheck}
                         />
+                        {error.price && <p className='Validation'>Add valid price!</p>}
                     </div>
 
                     <div className='InputSections'>
@@ -122,7 +141,9 @@ export const CreatePartAd = () => {
                             required
                             value={formData.phone}
                             onChange={onChangeHandler}
+                            onBlur={priceAndPhoneCheck}
                         />
+                        {error.phone && <p className='Validation'>The phone number is not valid!</p>}
                     </div>
                     <div className='InputSections'>
                         <button className="UploadAdBtm">Upload</button>

@@ -20,15 +20,15 @@ export const BikeProvider = ({ children }) => {
         setBikes(state => [
             ...state,
             bikeData]);
-    };
+    }
     const emptyBikeState = (id) => {
 
         setBikes(state => state.filter(x => x._id !== id));
-    };
+    }
 
     const editBikeState = (id, bikeData) => {
         setBikes(state => state.map(x => x._id === id ? bikeData : x));
-    };
+    }
 
     return <BikeContext.Provider value={{ bikes, addBikeHandler, emptyBikeState, editBikeState }}>
 
