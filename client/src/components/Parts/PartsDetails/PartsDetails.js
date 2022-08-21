@@ -16,6 +16,9 @@ export const PartDetails = () => {
 
     const [partInfo, setPartInfo] = useState({});
     const [currentComents, setCurrentComments] = useState([]);
+    const [commentInput, setCommentInput] = useState({
+        comment: ''
+    });
 
     useEffect(() => {
         partService.getOne(id)
@@ -25,22 +28,21 @@ export const PartDetails = () => {
             .then(res => setCurrentComments(Object.values(res)));
     }, []);
 
+    const onCommentChange = e => {
+        setCommentInput(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }))
+    }
+
     const addCommentHandler = (e) => {
 
         e.preventDefault();
 
-        const comentData = new FormData(e.target);
-        const comment = comentData.get('comment');
-
         const data = {
             partId: id,
             author: userData.email,
-            comment: comment
-        };
-
-        if (comment.length < 1) {
-            alert(`You can't send empty comment!`);
-            return
+            comment: commentInput.comment
         };
 
         commentService.createComment(token, data)
@@ -51,7 +53,7 @@ export const PartDetails = () => {
                 ])
             });
 
-        e.target.children[0].value = '';
+        commentInput.comment = '';
     };
     const deletPartAd = () => {
         const confirmation = window.confirm('Are you sure you want to delete this ad?');
@@ -111,9 +113,12 @@ export const PartDetails = () => {
                             className="InputAreaComment"
                             name='comment'
                             placeholder="Add new comment.."
+                            onChange={onCommentChange}
+                            value={commentInput.comment}
                         >
                         </input>
                         <button
+                            disabled={!commentInput.comment}
                             className="AddCommentButton"
                             type="submit"
                             value='Add comment'> Comment

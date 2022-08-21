@@ -15,6 +15,9 @@ export const BikeDetails = () => {
 
     const [currentComents, setCurrentComments] = useState([]);
     const [bikeInfo, setBikeInfo] = useState({});
+    const [commentInput, setCommentInput] = useState({
+        comment: ''
+    });
 
     useEffect(() => {
         bikeService.getOne(id)
@@ -24,22 +27,20 @@ export const BikeDetails = () => {
             .then(res => setCurrentComments(Object.values(res)));
     }, []);
 
+    const onCommentChange = e => {
+        setCommentInput(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }))
+    }
+
     const addCommentHandler = (e) => {
 
         e.preventDefault();
-
-        const comentData = new FormData(e.target);
-        const comment = comentData.get('comment');
-
         const data = {
             bikeId: id,
             author: userData.email,
-            comment: comment
-        };
-
-        if (comment.length < 1) {
-            alert(`You can't send empty comment!`);
-            return
+            comment: commentInput.comment
         };
 
         commentService.createComment(token, data)
@@ -50,7 +51,7 @@ export const BikeDetails = () => {
                 ]);
             });
 
-        e.target.children[0].value = '';
+        commentInput.comment = '';
     };
 
     const deletBikeAd = () => {
@@ -110,9 +111,13 @@ export const BikeDetails = () => {
                             className="TextArea"
                             name='comment'
                             placeholder="Add new comment.."
+                            onChange={onCommentChange}
+                            value={commentInput.comment}
                         >
                         </input>
                         <button
+
+                            disabled={!commentInput.comment}
                             className="AddCommentBtn"
                             type="submit"
                             value='Add comment'> Comment
