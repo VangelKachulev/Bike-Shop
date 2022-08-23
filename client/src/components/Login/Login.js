@@ -29,7 +29,7 @@ export const Login = () => {
             alert(`Username or password are too short!`);
             return
         } else {
-            UserService.login({ email, password })
+            UserService.login(email, password)
                 .then(authData => {
 
                     userLogin(authData);

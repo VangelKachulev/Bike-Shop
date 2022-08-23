@@ -1,32 +1,8 @@
-const url = `http://localhost:3030/data/bikecomments/`
+import * as request from "./requester";
 
-export const createComment = async (token, data) => {
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                'X-Authorization': token
-            },
-            body: JSON.stringify(data)
-        })
-        const result = await response.json()
+const baseUrl = `http://localhost:3030/data/bikecomments/`
 
-        return result;
-    } catch (err) {
-        console.log(err);
-    }
-};
-export const getAllComments = async () => {
+export const getAllComments = () => request.get(baseUrl);
 
-    try {
-        const response = await fetch(url)
-        const result = await response.json()
+export const createComment = (token, comment) => request.post(baseUrl, comment);
 
-        return result;
-
-    } catch (err) {
-      
-        console.log(err);
-    }
-};

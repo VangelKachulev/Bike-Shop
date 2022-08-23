@@ -1,82 +1,14 @@
-const url = `http://localhost:3030/data/bikes/`
+import * as request from "./requester";
 
-export const getAll = async () => {
+const baseUrl = `http://localhost:3030/data/bikes/`
 
-    try {
-        const response = await fetch(url);
-        const result = await response.json()
-        return result;
+export const getAll = () => request.get(baseUrl);
 
-    } catch (err) {
-        console.log(err);
-    }
-}
+export const getOne = (bikeId) => request.get(`${baseUrl}/${bikeId}`);
 
-export const getOne = async (id) => {
+export const post = (token, bikeData) => request.post(baseUrl, bikeData);
 
-    try {
-        const response = await fetch(url + id)
-        const result = await response.json()
+export const update = (token, bikeData, bikeId) => request.put(`${baseUrl}/${bikeId}`, bikeData);
 
-        return result
-
-    } catch (err) {
-        console.log(err);
-    }
-}
-
-export const post = async (token, data) => {
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                'X-Authorization': token
-            },
-            body: JSON.stringify(data)
-        })
-        const result = await response.json()
-
-        return result;
-    } catch (err) {
-        console.log(err);
-    }
-}
-export const removeAd = async (token, id) => {
-    try {
-        const response = await fetch(url + id, {
-            method: 'DELETE',
-            headers: {
-                'content-type': 'application/json',
-                'X-Authorization': token
-            },
-            body: {},
-        })
-        const result = await response.json()
-
-        return result;
-    } catch (err) {
-        console.log(err);
-    }
-}
-export const update = async (token, data, id) => {
-    try {
-        const response = await fetch(url + id, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json',
-                'X-Authorization': token
-            },
-            body: JSON.stringify(data)
-        })
-        const result = await response.json()
-
-        return result;
-    } catch (err) {
-        console.log(err);
-    }
-}
-
-
-
+export const removeAd = (token, bikeId) => request.del(`${baseUrl}/${bikeId}`);
 

@@ -1,73 +1,15 @@
-const url = `http://localhost:3030/data/parts/`
+import * as request from "./requester";
 
-export const getAll = async () => {
-    try {
-        const response = await fetch(url)
-        const result = await response.json()
-        return result;
-    } catch (err) {
-        console.log(err);
-    }
-}
-export const getOne = async (id) => {
-    try {
-        const response = await fetch(url + id)
-        const result = await response.json()
+const baseUrl = `http://localhost:3030/data/parts/`
 
-        return result
-    } catch (err) {
-        console.log(err);
 
-    }
-}
-export const post = async (token, data) => {
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                'X-Authorization': token
-            },
-            body: JSON.stringify(data)
-        })
-        const result = await response.json()
+export const getAll = () => request.get(baseUrl);
 
-        return result;
-    } catch (err) {
-        console.log(err);
-    }
-}
-export const removeAd = async (token, id) => {
-    try {
-        const response = await fetch(url + id, {
-            method: 'DELETE',
-            headers: {
-                'content-type': 'application/json',
-                'X-Authorization': token
-            },
-            body: {},
-        })
-        const result = await response.json()
+export const getOne = (partId) => request.get(`${baseUrl}/${partId}`);
 
-        return result;
-    } catch (err) {
-        console.log(err);
-    }
-};
-export const update = async (token, data, id) => {
-    try {
-        const response = await fetch(url + id, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json',
-                'X-Authorization': token
-            },
-            body: JSON.stringify(data)
-        })
-        const result = await response.json()
+export const post = (token, partData) => request.post(baseUrl, partData);
 
-        return result;
-    } catch (err) {
-        console.log(err);
-    }
-};
+export const update = (token, partData, partId) => request.put(`${baseUrl}/${partId}`, partData);
+
+export const removeAd = (token, partId) => request.del(`${baseUrl}/${partId}`);
+

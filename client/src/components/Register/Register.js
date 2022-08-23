@@ -31,7 +31,7 @@ export const Register = () => {
             return
         };
 
-        UserService.register({ email, password })
+        UserService.register(email, password)
             .then(autData => {
                 userLogin(autData);
 
