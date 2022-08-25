@@ -21,10 +21,19 @@ export const BikeDetails = () => {
 
     useEffect(() => {
         bikeService.getOne(id)
-            .then(data => setBikeInfo(data));
+            .then(data => setBikeInfo(data))
+            .catch(() => {
+                navigate('/404');
+                return
+            })
 
         commentService.getAllComments()
-            .then(res => setCurrentComments(Object.values(res)));
+            .then(res => setCurrentComments(Object.values(res)))
+            .catch(() => {
+                navigate('/404');
+                return
+            })
+
     }, []);
 
     const onCommentChange = e => {

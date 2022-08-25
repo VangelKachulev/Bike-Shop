@@ -35,10 +35,13 @@ export const CreatePartAd = () => {
                     addPartHandler(result);
 
                     navigate('/myAds')
-                });
+                })
+                .catch(() => {
+                    navigate('/404')
+                })
         }
     };
-    
+
     const [error, setError] = useState(false);
     const priceAndPhoneCheck = (e) => {
 

@@ -39,11 +39,12 @@ export const CreateBikeAd = () => {
                     addBikeHandler(result);
 
                     navigate('/myAds')
-                });
+                })
+                .catch(() => {
+                    navigate('/404')
+                })
         }
     };
-
-
 
     const [error, setError] = useState(false);
     const priceAndPhoneCheck = (e) => {

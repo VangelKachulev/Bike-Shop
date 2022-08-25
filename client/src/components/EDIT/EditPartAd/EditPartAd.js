@@ -37,6 +37,9 @@ export const EditPartAd = () => {
                     editPartState(result._id, result);
                     navigate(`/parts/${result._id}`);
                 })
+                .catch(() => {
+                    navigate('/404')
+                })
         }
     };
     const [error, setError] = useState(false);

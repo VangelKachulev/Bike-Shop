@@ -15,8 +15,8 @@ export const Logout = () => {
                 navigate('/')
 
             })
-            .catch((err) => {
-                console.log(err);
+            .catch(() => {
+                
                 navigate('/')
             });
     }, [])

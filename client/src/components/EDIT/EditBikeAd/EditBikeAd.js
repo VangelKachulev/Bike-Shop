@@ -40,8 +40,8 @@ export const EditBikeAd = () => {
                     editBikeState(result._id, result);
                     navigate(`/bikes/${result._id}`);
                 })
-                .catch((err) => {
-                    console.log(err);
+                .catch(() => {
+                    navigate('/404')
                 })
         }
     };

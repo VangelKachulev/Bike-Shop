@@ -8,7 +8,9 @@ import * as UserService from '../../services/UserService';
 export const Register = () => {
     const navigate = useNavigate();
     const { userLogin } = useContext(AuthContext);
-
+    const [error, setError] = useState(false);
+    const [passwordMatch, setPasswordMatch] = useState(false);
+    
     const [registerData, setRegisterData] = useState({
         email: '',
         password: '',
@@ -43,11 +45,11 @@ export const Register = () => {
                 }
 
             })
-            .catch((err) => {
-                console.log(err);
+            .catch(() => {
+                navigate('/404')
             });
     };
-    const [error, setError] = useState(false);
+
     const inputLengthCheck = e => {
         if (e.target.value.length < 6) {
             setError(state => ({
@@ -61,7 +63,7 @@ export const Register = () => {
             }));
         }
     }
-    const [passwordMatch, setPasswordMatch] = useState(false);
+
     const passWordsCheck = e => {
         if (password !== repeatPassword) {
             setPasswordMatch(state => ({

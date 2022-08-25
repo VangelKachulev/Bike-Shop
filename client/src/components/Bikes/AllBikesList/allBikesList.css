@@ -20,7 +20,20 @@
     font-family: fantasy;
     font-size: 35px;
 }
-.MainListBikes{
+
+.MainListBikes {
     width: 1900px;
     height: 830px;
+}
+
+.SearchBox {
+    padding: 5px 10px 0px 20px;
+}
+
+.SearchInput {
+    padding: 5px 10px 5px 20px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+
 }

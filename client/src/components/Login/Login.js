@@ -36,7 +36,7 @@ export const Login = () => {
                     if (authData.accessToken) {
                         navigate('/');
                     } else {
-                        alert(`Email or Password dont match!`)
+                        alert(`Unknown user!`)
                     }
 
                 })

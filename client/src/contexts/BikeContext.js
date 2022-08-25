@@ -1,10 +1,11 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as bikeService from '../services/BikeService';
 
 export const BikeContext = createContext();
 
 export const BikeProvider = ({ children }) => {
-
+    const navigate = useNavigate();
     const [bikes, setBikes] = useState([]);
     useEffect(() => {
         bikeService.getAll()
@@ -12,6 +13,12 @@ export const BikeProvider = ({ children }) => {
 
                 setBikes(Object.values(data));
             })
+            .catch((err) => {
+                navigate('/404');
+                return
+            })
+
+
 
     }, []);
 

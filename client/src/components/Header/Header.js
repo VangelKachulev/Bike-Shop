@@ -30,6 +30,7 @@ export function Header() {
 
             {token
                 ? <ul className="goRight">
+                   
                     <li style={styleUser} to="/">Welcome, {userData.email}!</li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/bikes">Bikes</NavLink></li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/parts">Parts</NavLink></li>

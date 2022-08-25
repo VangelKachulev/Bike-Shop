@@ -1,11 +1,11 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, } from "react";
 import * as partsService from '../services/PartsService';
-
+import { useNavigate } from "react-router-dom";
 export const PartsContext = createContext();
 
 
 export const PartsProvider = ({ children }) => {
-
+    const navigate = useNavigate();
     const [parts, setParts] = useState([]);
     useEffect(() => {
         partsService.getAll()
@@ -14,7 +14,11 @@ export const PartsProvider = ({ children }) => {
                 setParts(Object.values(data))
 
             })
-           
+            .catch((err) => {
+                navigate('/404');
+                return
+            })
+
     }, []);
 
     const addPartHandler = (partData) => {
