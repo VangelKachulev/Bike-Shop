@@ -1,36 +1,46 @@
-.Main {
-    background: url('./BIKEWALLPAPER.jpg');
-    background-position: center;
-    /* background-size: cover; */
-    background-repeat: no-repeat;
-    width: 1900px;
-    height: 830px;
-    padding-top: 10px;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Mains {
+    background-image: url("./bike.jpg");
+    background-size: cover;
+    height: 85vh;
+    max-width: 1920px;
+    position: relative;
+
 }
 
 .Bikeshop {
     position: absolute;
     font-family: fantasy;
-    color:whitesmoke;
+    color: whitesmoke;
     font-size: 90px;
+    position: absolute;
     left: 940px;
     top: 60px;
-    display: inline-block;
+
     text-decoration: line-through;
+
 }
 
 .Trade {
-    color: rgb(0, 0, 0);
+    position: absolute;
+    color: whitesmoke;
     font-size: 30px;
     font-family: 'Courier New', Courier, monospace;
-    margin-left: 870px;
-    margin-top: 115px;
+    position: absolute;
+    left: 590px;
+    top: 232px;
+
 }
+
 .ComStyle {
-    display:flex;
-    position:absolute;
+
+    position: absolute;
     font-family: fantasy;
-    color:black;
+    color: #d0b592;
     font-size: 40px;
     left: 1290px;
     top: 132px;

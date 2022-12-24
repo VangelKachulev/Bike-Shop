@@ -21,16 +21,43 @@ export function Header() {
         color: 'yellow'
 
     };
-
+    console.log(userData.email);
     return (
 
-        < nav className='Navigation'>
+        <nav className='header'>
+         {/* <h1 className='email'>Welcome, {userData.email}!</h1> */}
 
-            <h1 className='goLeft'><Link style={style} to="/" >BIKESHOP</Link></h1>
+            <a className='logo' href='/'>BIKESHOP</a >
 
-            {token
-                ? <ul className="goRight">
-                   
+            {token ?
+
+                <ul className="nav">
+
+           
+                    <li><a href='/bikes'>Bikes</a ></li>
+                    <li><a href="/parts">Parts</a></li>
+                    <li><a href="/createBikeAd">Upload</a></li>
+                    <li><a href="/myads">My-Ads</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+                : <ul className="nav">
+
+                    <li><a href='/bikes'>Bikes</a ></li>
+                    <li><a href="/parts">Parts</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            }
+
+
+
+
+
+
+            {/* {token
+                ? <ul className="nav">
+
                     <li style={styleUser} to="/">Welcome, {userData.email}!</li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/bikes">Bikes</NavLink></li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/parts">Parts</NavLink></li>
@@ -41,13 +68,13 @@ export function Header() {
 
 
                 </ul>
-                : <ul className="goRight">
+                : <ul className="nav">
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/bikes">Bikes</NavLink></li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/parts">Parts</NavLink></li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/login">Login</NavLink></li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/about">About</NavLink></li>
                 </ul>
-            }
+            }  */}
         </nav>
     )
 }

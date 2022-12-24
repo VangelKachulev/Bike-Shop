@@ -1,16 +1,18 @@
 
 import './footer.css'
-export function Footer(){
+export function Footer() {
 
-   return (<footer>
-        <div>
-            <div >
-                <div >
-                    <p>Copyright &copy; 2022 Bikeshop Ltd. Sofia +359898414152</p>
+    return (<footer className='footer'>
 
 
-                </div>
-            </div>
+        <div className="icons">
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-square-youtube"></i>
         </div>
+        <p>Copyright &copy; 2022 Bikeshop Ltd. Sofia +359898414152</p>
+
+
+
     </footer>)
 }

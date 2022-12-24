@@ -1,13 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 footer {
-    align-items: center;
+    display: flex;
+    background-color: #000000;
+    color: white;
+
+    /* align-items: center;
     background-color: #000000;
     bottom: 0;
     color: white;
     display: flex;
     font-size: 25px;
-    height: 60px;
-    justify-content: center;
-    /* position: relative; */
-    width: 1900px;
-    font-family: sans-serif;
+    height: 6vh;
+
+
+    max-width: 1920px;
+    font-family: sans-serif; */
 }
