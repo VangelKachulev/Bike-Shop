@@ -7,12 +7,14 @@ footer {
     display: flex;
     background-color: #000000;
     color: white;
-
+    height: 6vh;
+    font-size: 25px;
+    font-family: ; 
     /* align-items: center;
     background-color: #000000;
     bottom: 0;
-    color: white;
-    display: flex;
+ 
+ 
     font-size: 25px;
     height: 6vh;
 
