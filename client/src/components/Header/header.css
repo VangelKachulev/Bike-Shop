@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 .header {
@@ -26,6 +27,7 @@
     padding: 0.5rem 1rem;
     border-radius: 25px;
     margin-left: 1rem;
+    
 
 
 }
@@ -56,66 +58,25 @@
 .nav li:hover,
 
 .logo:hover {
-    background-color: rgb(18, 10, 10);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 1%, rgba(128, 128, 128, 1) 64%);
 
     text-decoration: none;
 }
 
-.nav li a {
+
+.on {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 2px;
+   
+
+}
+
+.of {
     text-decoration: none;
     color: white;
     font-weight: bold;
     letter-spacing: 2px;
+
 }
-
-.nav li:active {}
-
-
-
-/* .Navigation {
-    overflow: hidden;
-    background-color: #0e0d10;
-    font-weight: bold;
-    font-family: monospace;
-    text-decoration: none;
-    width: 1900px;
-    height: 100px;
-}
-
-.goRight {
-    float: right;
-    font-size: 28px;
-    line-height: 50px;
-    border-radius: 4px;
-    text-decoration: none;
-    margin: 10px 10px 10px 10px;
-}
-
-li {
-    color: aliceblue;
-    display: inline-block;
-    padding: 20px;
-    text-decoration: none;
-}
-
-.goLeft {
-    float: left;
-    line-height: 50px;
-    border-radius: 2px;
-    text-decoration: line-through;
-    padding-left: 40px;
-    font-family: fantasy;
-    color: 'whitesmoke';
-    margin: 25px 0px 0px 0px;
-    padding: 0px 0px 0px 20px;
-}
-
-.on {
-    color: whitesmoke;
-    text-decoration: underline;
-}
-
-.of {
-    color: whitesmoke;
-    text-decoration: none;
-} */

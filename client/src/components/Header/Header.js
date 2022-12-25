@@ -6,7 +6,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 export function Header() {
     const { token, userData } = useContext(AuthContext);
 
-    
+
     return (
 
         <nav className='header'>
@@ -15,19 +15,19 @@ export function Header() {
 
             {token ?
                 <ul className="nav">
-                    <li><a href='/bikes'>Bikes</a ></li>
-                    <li><a href="/parts">Parts</a></li>
-                    <li><a href="/createBikeAd">Upload</a></li>
-                    <li><a href="/myads">My-Ads</a></li>
-                    <li><a href="/logout">Logout</a></li>
-                    <li><a href="/about">About</a></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/parts">Parts</NavLink></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to='/bikes'>Bikes</NavLink ></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/createBikeAd">Upload</NavLink></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/myads">My-Ads</NavLink></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/logout">Logout</NavLink></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/about">About</NavLink></li>
                 </ul>
                 : <ul className="nav">
 
-                    <li><a href='/bikes'>Bikes</a ></li>
-                    <li><a href="/parts">Parts</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/about">About</a></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to='/bikes'>Bikes</NavLink></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/parts">Parts</NavLink></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/login">Login</NavLink></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/about">About</NavLink></li>
                 </ul>
             }
         </nav>
