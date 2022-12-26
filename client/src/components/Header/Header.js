@@ -11,7 +11,8 @@ export function Header() {
 
         <nav className='header'>
 
-            <a className='logo' href='/'>BIKESHOP</a >
+            <a className='logo' href='/'> BIKESHOP</a >
+
 
             {token ?
                 <ul className="nav">

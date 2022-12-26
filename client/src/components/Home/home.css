@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Poppins:wght@200;300&family=Righteous&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -13,31 +16,37 @@
 }
 
 .Bikeshop {
+    font-family: 'Pirata One', cursive;
     position: absolute;
-    font-family: fantasy;
+
     color: whitesmoke;
     font-size: 90px;
     position: absolute;
-    left: 940px;
-    top: 60px;
-
-    text-decoration: line-through;
-
+    left: 970px;
+    top: 80px;
+    font-family: 'Pirata One', cursive;
+    font-weight: 600;
+    letter-spacing: 5px;
+    
+    text-decoration: none;
+    color: white;
 }
 
 .Trade {
     position: absolute;
     color: whitesmoke;
-    font-size: 30px;
+    font-size:3rem;
     font-family: 'Courier New', Courier, monospace;
     position: absolute;
-    left: 590px;
-    top: 232px;
+    left: 570px;
+    top: 222px;
+    letter-spacing: 2px;
 
 }
 
-.ComStyle {
 
+.ComStyle {
+letter-spacing: 3px;
     position: absolute;
     font-family: fantasy;
     color: #d0b592;
