@@ -5,20 +5,25 @@
 
 footer {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+
     background-color: #000000;
     color: white;
     height: 6vh;
     font-size: 25px;
 
-    /* align-items: center;
-    background-color: #000000;
-    bottom: 0;
- 
- 
-    font-size: 25px;
-    height: 6vh;
 
-
-    max-width: 1920px;
-    font-family: sans-serif; */
+}
+footer p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.icons {
+    display: flex;
+    width: 100px;
+    justify-content: space-around;
+    font-size: 2rem;
+    cursor: pointer;
 }

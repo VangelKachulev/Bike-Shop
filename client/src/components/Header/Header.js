@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 
 export function Header() {
-    const { token, userData } = useContext(AuthContext);
+    const { token } = useContext(AuthContext);
 
 
     return (

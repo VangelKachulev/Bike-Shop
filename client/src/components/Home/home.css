@@ -6,20 +6,23 @@
     padding: 0;
 }
 
+
+
 .Mains {
-    background-image: url("./bike.jpg");
-    background-size: cover;
+    background-image: url("./BIKEWALLPAPER.jpg");
+    background-position: center;
+
     height: 85vh;
     max-width: 1920px;
-    position: relative;
-
+    max-height: none;
 }
+
 
 .Bikeshop {
     font-family: 'Pirata One', cursive;
     position: absolute;
 
-    color: whitesmoke;
+    cursor:default;
     font-size: 90px;
     position: absolute;
     left: 970px;
@@ -27,30 +30,31 @@
     font-family: 'Pirata One', cursive;
     font-weight: 600;
     letter-spacing: 5px;
-    
+
     text-decoration: none;
     color: white;
 }
 
 .Trade {
     position: absolute;
-    color: whitesmoke;
-    font-size:3rem;
+    color: rgb(231, 218, 218);
+    font-size: 3rem;
     font-family: 'Courier New', Courier, monospace;
     position: absolute;
-    left: 570px;
-    top: 222px;
+    left: 725px;
+    top: 175px;
     letter-spacing: 2px;
-
+    cursor:default;
 }
 
 
 .ComStyle {
-letter-spacing: 3px;
+    letter-spacing: 3px;
     position: absolute;
     font-family: fantasy;
     color: #d0b592;
     font-size: 40px;
     left: 1290px;
     top: 132px;
+    cursor:default;
 }
