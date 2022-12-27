@@ -28,25 +28,24 @@ export const AllBikesList = () => {
 
 
     return (
-        <div className="MainListBikes">
-            <div className="InlineBlock">
+        <div>
+            <div className="main-div">
+                <h1 className="heading">ALL LISTED BIKES</h1>
+            </div>
+            <div className="search-box">
+                <input className="search-input" placeholder="Search..." name="searchBox" onChange={setQuery} />
 
-                <div>
-                    <div className="AllListedAdds">
-                        <h1 className="Honebikes">ALL LISTED BIKES</h1>
-                    </div>
-                    <div className="SearchBox">
-                        <input className="SearchInput" placeholder="Search..." name="searchBox" onChange={setQuery} />
-
-                    </div>
-                    {
-                        filteredBikes.length > 0
-                            ? filteredBikes.map(bike => <BikeItem key={bike._id} data={bike}></BikeItem>)
-                            : <h1 className="NoBikesToShow">Nothing to show</h1>
-                    }
-                </div>
+            </div>
+            <div className="bike-item-list">
+                {
+                    filteredBikes.length > 0
+                        ? filteredBikes.map(bike => <BikeItem key={bike._id} data={bike}></BikeItem>)
+                        : <h1 className="nothing-to-show">Nothing to show</h1>
+                }
             </div>
         </div>
+
+
 
     )
 }

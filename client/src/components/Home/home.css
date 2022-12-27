@@ -2,19 +2,21 @@
 
 
 * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 
-
 .Mains {
     background-image: url("./BIKEWALLPAPER.jpg");
-    background-position: center;
+    background-repeat: no-repeat;
 
-    height: 85vh;
+    height: 88vh;
     max-width: 1920px;
-    max-height: none;
+    max-height: 900px;
 }
 
 
@@ -22,7 +24,7 @@
     font-family: 'Pirata One', cursive;
     position: absolute;
 
-    cursor:default;
+    cursor: default;
     font-size: 90px;
     position: absolute;
     left: 970px;
@@ -44,7 +46,7 @@
     left: 725px;
     top: 175px;
     letter-spacing: 2px;
-    cursor:default;
+    cursor: default;
 }
 
 
@@ -52,9 +54,9 @@
     letter-spacing: 3px;
     position: absolute;
     font-family: fantasy;
-    color: #d0b592;
+    color: #eebb02;
     font-size: 40px;
     left: 1290px;
     top: 132px;
-    cursor:default;
+    cursor: default;
 }

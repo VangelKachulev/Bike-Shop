@@ -1,37 +1,55 @@
-.MainSectionForDetails {
-    display: block;
-    width: 1900px;
-    height: auto;
-    max-height: max-content;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Poppins:wght@200;300&family=Righteous&display=swap');
+
+.details-main {
+    height: 100vh;
+    /* width: 1920px; */
+    max-width: 1920px;
 }
 
-.TextContainter {
-    text-align: center;
-    display: inline-block;
-    font-size: 30px;
-    width: 400px;
-    margin: 0px 10px 20px 450px;
-    font-family: monospace;
+.content {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 30px;
 }
 
-.ImageContainer {
-    width: 600px;
-    height: 730px;
-    padding: 35px 80px 0px 100px;
-    display: inline-block;
-    margin-top: 20px;
+.details-image-container {
+    margin: 0 auto;
+    width: 50%;
+    height: 50vh;
 }
 
-.Container {
-    width: 160%;
-    border-radius: 30px;
-    height: 90%;
-    object-fit: cover;
+.details-image-container img {
+    width: 100%;
+    width: 100%;
+    object-fit: scale-down;
+
 }
 
-.OptionButtons {
-    padding: 10px 25px 10px 25px;
-    margin: 0px 20px 0px 0px;
+.details-data {
+    font-family: 'Montserrat', cursive;
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    align-items: center
+}
+
+.owner-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.details-buttons {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 0.5rem 1rem;
     border-radius: 30px;
     border: 2px solid black;
     font-family: monospace;
@@ -42,19 +60,15 @@
     cursor: pointer;
     text-decoration: none;
 }
-
-.BrandName {
-    font-family: fantasy;
-}
-
-.DescriptionParagraph {
-    font-style: italic;
+.details-buttons:hover {
+    background-color: #0f4b35bf;
 }
 
 
-/* asdfasfasf */
 
-.CommentsSection {
+
+
+/* .CommentsSection {
     border-radius: 20px;
     border: 1px solid black;
     margin: 5px 61px 25px 60px;
@@ -107,4 +121,4 @@
 .ParagraphComment {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
-}
+} */

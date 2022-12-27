@@ -73,29 +73,34 @@ export const BikeDetails = () => {
     };
 
     return (
-        <div className='MainSectionForDetails'>
+        <div className='details-main'>
+            <div className="content">
+                <div className='details-image-container'>
+                    <img src={bikeInfo.imageUrl} alt={'Not found'}></img>
+                </div>
 
-            <div className='ImageContainer'>
-                <img className='Container' src={bikeInfo.imageUrl} alt={'Not found'}></img>
+                <div className='details-data'>
+
+                    <h1 >{bikeInfo.brand}</h1>
+                    <h2>Size: {bikeInfo.frame}</h2>
+                    <h2>Wheels size: {bikeInfo.wheelSize}</h2>
+                    <h2>Price: ${bikeInfo.price}</h2>
+                    <h4 >Description :</h4>
+                    <p>{bikeInfo.description}</p>
+                    <h3> Owner's phone: {bikeInfo.phone}</h3>
+
+                    {(userData._id === bikeInfo._ownerId)
+                        && <div className="owner-btn">
+                            <Link to={`/bikes/${bikeInfo._id}/edit`} state={{ bikeInfo: bikeInfo }} className="details-buttons">EDIT</Link>
+                            <button onClick={deletBikeAd} className='details-buttons'>DELETE</button>
+
+                        </div>
+                    }
+                </div>
+
+
             </div>
 
-            <div className='TextContainter'>
-                <h1 className='BrandName'>{bikeInfo.brand}</h1>
-                <h2>Size: {bikeInfo.frame}</h2>
-                <h2>Wheels size: {bikeInfo.wheelSize}</h2>
-                <h2>Price: ${bikeInfo.price}</h2>
-                <h4 >Description :</h4>
-                <p className='DescriptionParagraph'>{bikeInfo.description}</p>
-                <h3> Owner's phone: {bikeInfo.phone}</h3>
-
-                {(userData._id === bikeInfo._ownerId)
-                    && <div>
-                        <Link to={`/bikes/${bikeInfo._id}/edit`} state={{ bikeInfo: bikeInfo }} className="OptionButtons" >EDIT</Link>
-                        <button onClick={deletBikeAd} className='OptionButtons'>DELETE</button>
-
-                    </div>
-                }
-            </div>
 
             <div className="CommentsSection">
                 <h2>Comments:</h2>

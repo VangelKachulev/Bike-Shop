@@ -7,20 +7,20 @@ export const BikeItem = ({
 }) => {
 
     return (
-        <div key={data._id} className="BikeDiv">
-            <div className="ListItem">
+        <div key={data._id} className="bike-item-main">
 
-                <div className="ImageDiv">
-                    <img className='CoverIt' src={data.imageUrl} />
-                </div>
 
-                <div className="Data">
-                    <h2>{data.brand}</h2>
-                    <h3 className="FrameSize">Frame size:{data.frame}</h3>
-                    <h3 className="Price">${data.price}</h3>
-                    <Link to={`/bikes/${data._id}`} className="Button" >More info</Link>
-                </div>
+            <div className="bike-image-container">
+                <img className='CoverIt' src={data.imageUrl} />
             </div>
+
+
+            <h2>{data.brand}</h2>
+            <h3 className="FrameSize">Frame size:{data.frame}</h3>
+            <h3 className="Price">${data.price}</h3>
+            <Link to={`/bikes/${data._id}`} className="button" >More info</Link>
+
+
         </div >
     )
 
