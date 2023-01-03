@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Poppins:wght@200;300&family=Righteous&display=swap');
 
 .details-main {
-    height: 100vh;
-    /* width: 1920px; */
-    max-width: 1920px;
+    height: 80vh;
+    /* max-width: 1920px; */
+
+
+
 }
 
 .content {
@@ -48,18 +50,19 @@
 }
 
 .details-buttons {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     padding: 0.5rem 1rem;
     border-radius: 30px;
     border: 2px solid black;
     font-family: monospace;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: bold;
     background-color: #156749bf;
     color: white;
     cursor: pointer;
     text-decoration: none;
 }
+
 .details-buttons:hover {
     background-color: #0f4b35bf;
 }
@@ -68,32 +71,53 @@
 
 
 
-/* .CommentsSection {
-    border-radius: 20px;
-    border: 1px solid black;
-    margin: 5px 61px 25px 60px;
-    font-family: monospace;
-    padding: 16px 20px 21px 20p
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 20px;
+
 }
 
-.Comment {
+.comment-section-title {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 90%;
+    text-align: center;
+    font-family: 'Montserrat', cursive;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.single-comment {
     border-radius: 20px;
     display: block;
-    border: 1px solid black;
-    margin: 11px 37px 0px -1px;
-    padding: 3px 30px 10px 29px;
-    background-color: rgba(255, 228, 196, 0.571);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 40%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 28%, rgba(253, 187, 45, 0.4150035014005602) 100%);
     color: black;
-    font-size: 15px;
+    height: 4rem;
+    font-size: 1rem;
+}
+
+.comment-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* text-align: center; */
+    width: 100%;
+    gap: 10px;
 }
 
 .MainCommentSection {
     display: block;
-    height: 200px;
+    height: 300px;
+ 
 }
 
-.TextArea {
-    width: 600px;
+.text-area {
+    width: 30%;
     height: 100px;
     margin: 11px 49px 2px 65px;
     border: 1px solid black;
@@ -113,12 +137,12 @@
     text-decoration: none;
 }
 
-.AuthourSection {
+.author {
     font-family: monospace;
     text-transform: capitalize;
 }
 
-.ParagraphComment {
+.comment {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
-} */
+}

@@ -101,28 +101,28 @@ export const BikeDetails = () => {
 
             </div>
 
+            <div className="comment-section">
+                <h2 className="comment-section-title">Comments:</h2>
 
-            <div className="CommentsSection">
-                <h2>Comments:</h2>
-
-                <ul >
+                <ul>
 
                     {(currentComents?.map(x => bikeInfo._id === x.bikeId
-                        && <li className="Comment" key={x._id}>
-                            <h3 className="AuthourSection" >{x.author}:</h3>
-                            <p className="ParagraphComment">{x.comment}</p>
+                        && <li className="single-comment" key={x._id}>
+                            <h3 className="author" >{x.author}:</h3>
+                            <p className="comment">{x.comment}</p>
                         </li>))
                         || (<h1>No comments</h1>)
 
                     }
                 </ul>
             </div>
+
             {userData.accessToken ?
                 <div className="MainCommentSection">
 
                     <form onSubmit={addCommentHandler}>
                         <input
-                            className="TextArea"
+                            className="text-area"
                             name='comment'
                             placeholder="Add new comment.."
                             onChange={onCommentChange}

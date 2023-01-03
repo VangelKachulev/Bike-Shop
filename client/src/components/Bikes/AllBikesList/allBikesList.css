@@ -8,6 +8,7 @@
     height: 45vh;
     background-image: url('./9-CANYON-Wallpaper-2400x1350-Gravity\ \(1\).jpg');
     position: relative;
+
 }
 
 .nothing-to-show {
@@ -51,4 +52,5 @@
     gap: 12px;
     padding: 20px 20px;
     margin: 0 10px;
+    padding-bottom: 7rem;
 }
