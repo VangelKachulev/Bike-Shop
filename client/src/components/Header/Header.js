@@ -16,8 +16,8 @@ export function Header() {
 
             {token ?
                 <ul className="nav">
-                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/parts">Parts</NavLink></li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to='/bikes'>Bikes</NavLink ></li>
+                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/parts">Parts</NavLink></li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/createBikeAd">Upload</NavLink></li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/myads">My-Ads</NavLink></li>
                     <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/logout">Logout</NavLink></li>
