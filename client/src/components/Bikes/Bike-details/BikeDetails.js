@@ -118,7 +118,7 @@ export const BikeDetails = () => {
             </div>
 
             {userData.accessToken ?
-                <div className="MainCommentSection">
+                <div className="main-comment-section">
 
                     <form onSubmit={addCommentHandler}>
                         <input
@@ -132,7 +132,7 @@ export const BikeDetails = () => {
                         <button
 
                             disabled={!commentInput.comment}
-                            className="AddCommentBtn"
+                            className="add-comment"
                             type="submit"
                             value='Add comment'> Comment
                         </button>

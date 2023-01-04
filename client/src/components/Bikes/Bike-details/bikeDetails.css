@@ -3,10 +3,10 @@
 .details-main {
     height: 80vh;
     /* max-width: 1920px; */
-
-
-
 }
+
+
+
 
 .content {
     display: flex;
@@ -92,44 +92,48 @@
 
 .single-comment {
     border-radius: 20px;
-    display: block;
+    list-style-type: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     width: 40%;
     background: linear-gradient(0deg, rgba(255, 255, 255, 1) 28%, rgba(253, 187, 45, 0.4150035014005602) 100%);
     color: black;
     height: 4rem;
     font-size: 1rem;
+    padding: 10px;
 }
 
 .comment-section ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 70px;
     /* text-align: center; */
     width: 100%;
     gap: 10px;
 }
 
-.MainCommentSection {
+.main-comment-section {
     display: block;
     height: 300px;
- 
+
 }
 
 .text-area {
     width: 30%;
-    height: 100px;
-    margin: 11px 49px 2px 65px;
-    border: 1px solid black;
+    height: 6rem;
+    margin-left: 7rem;
+    margin-right: 2rem;
+    border: 2px solid black;
     border-radius: 25px;
 }
 
-.AddCommentBtn {
-    padding: 10px 25px 10px 25px;
-    border-radius: 20px;
-    border: 1px solid black;
+.add-comment {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    border: 2px solid black;
     font-family: monospace;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: bold;
     background-color: #156749bf;
     color: white;

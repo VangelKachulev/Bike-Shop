@@ -49,14 +49,14 @@ export const Login = () => {
 
     };
     return (
-        <div className="BackgroundLoginForm">
-            <form onSubmit={onSubmit} className="LoginForm">
+        <div className="login-background">
+            <form onSubmit={onSubmit} className="login-form">
 
-                <div className="LoginMainDiv">
-                    <div className='Blocks'>
+                <div className="login-main-inputs">
+                    <div className='inputs'>
                         <label htmlFor="email"><b>Email</b></label>
                         <input
-                            className="LoginInput"
+
                             type="text"
                             placeholder="Enter email"
                             name="email"
@@ -67,10 +67,10 @@ export const Login = () => {
 
                     </div>
 
-                    <div className='Blocks'>
+                    <div className='inputs'>
                         <label htmlFor="password"><b>Password</b></label>
                         <input
-                            className="LoginInput"
+
                             type="password"
                             placeholder="Enter Password"
                             name="password"
@@ -82,17 +82,17 @@ export const Login = () => {
 
                     </div>
 
-                    <div className='Blocks'>
-                        <button className="Btn">LOGIN</button>
+                    <div className='inputs'>
+                        <button className="login-button">LOGIN</button>
                     </div>
 
                 </div>
-                <p className="Field">
+                <p className="need-account">
                     <span>
                         Need account?
 
                     </span>
-                    <span><Link style={{ color: "black", fontFamily: "fantasy" }} to="/register">SIGN UP</Link> </span>
+                    <span><Link style={{ color: "black", fontFamily: "fantasy",letterSpacing: "1px" }} to="/register">SIGN UP</Link> </span>
                 </p>
 
             </form>
