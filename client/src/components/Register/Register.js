@@ -10,7 +10,7 @@ export const Register = () => {
     const { userLogin } = useContext(AuthContext);
     const [error, setError] = useState(false);
     const [passwordMatch, setPasswordMatch] = useState(false);
-    
+
     const [registerData, setRegisterData] = useState({
         email: '',
         password: '',
@@ -77,66 +77,67 @@ export const Register = () => {
             }));
         }
     }
-    return (<div className="BackGroundRegisterForm">
-        <form onSubmit={onSubmit} className="RegisterForm">
-            <h2 className='MainLabel'>Register</h2>
-            <div >
-                <div className='Blocks'>
-                    <label htmlFor="email"><b>Email</b></label>
-                    <input
-                        id='email'
-                        name='email'
-                        className="RegisterInput"
-                        type="text"
-                        placeholder="Enter email"
-                        required
-                        value={registerData.email}
-                        onChange={onChangeHandler}
-                        onBlur={inputLengthCheck}
-                    />
-                    {error.email && <p className='Validation'>Email must be at least 6 symbols!</p>}
+    return (
+        <div className="register-background">
+            <form onSubmit={onSubmit} className="register-form">
+                <h2 className='MainLabel'>Register</h2>
+                <div className='register-inputs'>
+                    <div className='register-input'>
+                        <label htmlFor="email"><b>Email</b></label>
+                        <input
+                            id='email'
+                            name='email'
+
+                            type="text"
+                            placeholder="Enter email"
+                            required
+                            value={registerData.email}
+                            onChange={onChangeHandler}
+                            onBlur={inputLengthCheck}
+                        />
+                        {error.email && <p className='Validation'>Email must be at least 6 symbols!</p>}
+                    </div>
+
+                    <div className='register-input'>
+                        <label htmlFor="password"><b>Password</b></label>
+                        <input
+                            id='password'
+
+                            type="password"
+                            placeholder="Enter Password"
+                            name="password"
+                            required
+                            value={registerData.password}
+                            onChange={onChangeHandler}
+                            onBlur={inputLengthCheck}
+                        />
+                        {error.password && <p className='Validation'>Password must be at least 6 symbols!</p>}
+                    </div>
+
+                    <div className='register-input'>
+                        <label htmlFor="repeatPassword"><b>Password Again</b></label>
+                        <input
+                            id='repeatPassword'
+
+                            type="password"
+                            placeholder="Repeat your password"
+                            name="repeatPassword"
+                            required
+                            value={registerData.repeatPassword}
+                            onChange={onChangeHandler}
+                            onBlur={passWordsCheck}
+                        />
+                        {passwordMatch.repeatPassword && <p className='Validation'>Passwords dont match!</p>}
+
+                    </div>
+
+                    <div className='register-input'>
+                        <button className="register-button">REGISTER</button>
+                    </div>
+
                 </div>
 
-                <div className='Blocks'>
-                    <label htmlFor="password"><b>Password</b></label>
-                    <input
-                        id='password'
-                        className="RegisterInput"
-                        type="password"
-                        placeholder="Enter Password"
-                        name="password"
-                        required
-                        value={registerData.password}
-                        onChange={onChangeHandler}
-                        onBlur={inputLengthCheck}
-                    />
-                    {error.password && <p className='Validation'>Password must be at least 6 symbols!</p>}
-                </div>
 
-                <div className='Blocks'>
-                    <label htmlFor="repeatPassword"><b>Password Again</b></label>
-                    <input
-                        id='repeatPassword'
-                        className="RegisterInput"
-                        type="password"
-                        placeholder="Repeat your password"
-                        name="repeatPassword"
-                        required
-                        value={registerData.repeatPassword}
-                        onChange={onChangeHandler}
-                        onBlur={passWordsCheck}
-                    />
-                    {passwordMatch.repeatPassword && <p className='Validation'>Passwords dont match!</p>}
-
-                </div>
-
-                <div className='Blocks'>
-                    <button className="RegisterBtn">REGISTER</button>
-                </div>
-
-            </div>
-
-
-        </form>
-    </div>)
+            </form>
+        </div>)
 }

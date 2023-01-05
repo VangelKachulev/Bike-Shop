@@ -1,8 +1,14 @@
 .login-background {
     width: 1920px;
-    height: 850px;
+    height: 100vh;
     background-image: url('https://wallpaperaccess.com/full/28999.jpg');
-    padding-top: 1px;
+
+}
+
+.login-main-label {
+    text-align: center;
+    font-family: monospace;
+    font-size: 35px;
 }
 
 .login-main-inputs {
@@ -34,10 +40,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border: 3px solid #000000;
-    padding: 70px;
+    padding: 55px;
     background-color: rgb(255, 255, 255);
-    width: 40vh;
-    height: 45vh;
+    width: 45vh;
+    height: 50vh;
     border-radius: 50px;
 }
 
@@ -59,7 +65,7 @@
 
 
 .need-account {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-top: 2px;
     text-align: center;
     font-style: italic;

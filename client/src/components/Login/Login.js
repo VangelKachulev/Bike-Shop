@@ -51,7 +51,7 @@ export const Login = () => {
     return (
         <div className="login-background">
             <form onSubmit={onSubmit} className="login-form">
-
+                <h2 className='login-main-label'>Login</h2>
                 <div className="login-main-inputs">
                     <div className='inputs'>
                         <label htmlFor="email"><b>Email</b></label>
@@ -92,7 +92,7 @@ export const Login = () => {
                         Need account?
 
                     </span>
-                    <span><Link style={{ color: "black", fontFamily: "fantasy",letterSpacing: "1px" }} to="/register">SIGN UP</Link> </span>
+                    <span><Link style={{ color: "black", fontFamily: "fantasy", letterSpacing: "1px" }} to="/register">SIGN UP</Link> </span>
                 </p>
 
             </form>
