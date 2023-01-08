@@ -62,19 +62,19 @@ export const CreateBikeAd = () => {
         }
     }
     return (
-        < div className='BikeBackGroundUploadForm' >
-            <form className="BikeUploadForm" onSubmit={onSubmit}>
-                <h2 className='BikeLabelForCreateForm'>UPLOAD YOUR BIKE</h2>
-                <div className='BikeSwitchButton'>
+        < div className='upload-page-background' >
+            <form className="upload-form" onSubmit={onSubmit}>
+                <h2 className='upload-label'>UPLOAD YOUR BIKE</h2>
+                <div className='switch-btn'>
                     <Link to={`/createPartAd`} >UPLOAD BIKE PARTS</Link>
                 </div>
-                <div >
-                    <div className='BikeInputSections' >
+                <div className='upload-form-inputs'>
+                    <div className='upload-single-input' >
                         <label htmlFor="brand"><b>Brand</b></label>
                         <input
                             id='brand'
                             name='brand'
-                            className="BikeUploadAdInput"
+
                             type="text"
                             required
                             value={formData.brand}
@@ -82,11 +82,11 @@ export const CreateBikeAd = () => {
                         />
                     </div>
 
-                    <div className='BikeInputSections'>
+                    <div className='upload-single-input'>
                         <label htmlFor="frame"><b>Frame size</b></label>
                         <input
                             id='frame'
-                            className="BikeUploadAdInput"
+
                             type="text"
                             name="frame"
                             required
@@ -95,11 +95,11 @@ export const CreateBikeAd = () => {
                         />
                     </div>
 
-                    <div className='BikeInputSections'>
+                    <div className='upload-single-input'>
                         <label htmlFor="image"><b>Image adress</b></label>
                         <input
                             id='imageUrl'
-                            className="BikeUploadAdInput"
+
                             type="text"
                             name="imageUrl"
                             required
@@ -107,11 +107,11 @@ export const CreateBikeAd = () => {
                             onChange={onChangeHandler}
                         />
                     </div>
-                    <div className='BikeInputSections'>
+                    <div className='upload-single-input'>
                         <label htmlFor="price"><b>Price</b></label>
                         <input
                             id='price'
-                            className="BikeUploadAdInput"
+
                             type="text"
                             name="price"
                             required
@@ -121,11 +121,11 @@ export const CreateBikeAd = () => {
                         />
                         {error.price && <p className='Validation'>Add valid price!</p>}
                     </div>
-                    <div className='BikeInputSections'>
+                    <div className='upload-single-input'>
                         <label htmlFor="wheelSize"><b>Wheel size</b></label>
                         <input
                             id='wheelSize'
-                            className="BikeUploadAdInput"
+
                             type="text"
                             name="wheelSize"
                             required
@@ -134,11 +134,11 @@ export const CreateBikeAd = () => {
                         />
 
                     </div>
-                    <div className='BikeInputSections'>
+                    <div className='upload-single-input'>
                         <label htmlFor="description"><b>Description</b></label>
                         <input
                             id='description'
-                            className="BikeUploadAdInput"
+
                             type="text"
                             name="description"
                             required
@@ -146,11 +146,11 @@ export const CreateBikeAd = () => {
                             onChange={onChangeHandler}
                         />
                     </div>
-                    <div className='BikeInputSections'>
+                    <div className='upload-single-input'>
                         <label htmlFor="phone"><b>Phone number</b></label>
                         <input
                             id='phone'
-                            className="BikeUploadAdInput"
+
                             type="text"
                             name="phone"
                             required
@@ -162,9 +162,9 @@ export const CreateBikeAd = () => {
 
                         {error.phone && <p className='Validation'>The phone number is not valid!</p>}
                     </div>
-                    <div className='BikeInputSections'>
+                    <div className='upload-single-input'>
 
-                        <button disabled={!formData} className="BikeUploadAdBtm">Upload</button>
+                        <button disabled={!formData} className="upload-bike-btn">Upload</button>
 
 
                     </div>
