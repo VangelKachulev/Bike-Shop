@@ -119,7 +119,7 @@ export const CreateBikeAd = () => {
                             onChange={onChangeHandler}
                             onBlur={priceAndPhoneCheck}
                         />
-                        {error.price && <p className='Validation'>Add valid price!</p>}
+                        {error.price && <p className='upload-page-validation'>Add valid price!</p>}
                     </div>
                     <div className='upload-single-input'>
                         <label htmlFor="wheelSize"><b>Wheel size</b></label>
@@ -160,7 +160,7 @@ export const CreateBikeAd = () => {
 
                         />
 
-                        {error.phone && <p className='Validation'>The phone number is not valid!</p>}
+                        {error.phone && <p className='upload-page-validation'>The phone number is not valid!</p>}
                     </div>
                     <div className='upload-single-input'>
 

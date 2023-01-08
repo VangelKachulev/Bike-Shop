@@ -60,19 +60,19 @@ export const CreatePartAd = () => {
 
     return (
 
-        <div className='BackGroundUploadForm'>
-            <form onSubmit={onSubmit} className="UploadForm">
-                <h2 className='LabelForCreateForm'>UPLOAD BIKE PARTS</h2>
-                <div className='SwitchButtontoBikes'>
+        <div className='part-upload-background'>
+            <form onSubmit={onSubmit} className="part-upload-form">
+                <h2 className='part-upload-label'>UPLOAD BIKE PARTS</h2>
+                <div className='switch-to-bikes'>
                     <Link to={`/createBikeAd`} >UPLOAD YOUR BIKE</Link>
                 </div>
-                <div >
-                    <div className='InputSections' >
+                <div className='part-upload-inputs'>
+                    <div className='part-upload-single-input' >
                         <label htmlFor="type"><b>Type</b></label>
                         <input
                             id='type'
                             name='type'
-                            className="UploadAdInput"
+
                             type="text"
                             required
                             value={formData.type}
@@ -80,11 +80,11 @@ export const CreatePartAd = () => {
                         />
                     </div>
 
-                    <div className='InputSections'>
+                    <div className='part-upload-single-input'>
                         <label htmlFor="brand"><b>Brand</b></label>
                         <input
                             id='brand'
-                            className="UploadAdInput"
+
                             type="text"
                             name="brand"
                             required
@@ -93,11 +93,11 @@ export const CreatePartAd = () => {
                         />
                     </div>
 
-                    <div className='InputSections'>
+                    <div className='part-upload-single-input'>
                         <label htmlFor="image"><b>Image adress</b></label>
                         <input
                             id='imageUrl'
-                            className="UploadAdInput"
+
                             type="text"
                             name="imageUrl"
                             required
@@ -106,11 +106,11 @@ export const CreatePartAd = () => {
 
                         />
                     </div>
-                    <div className='InputSections'>
+                    <div className='part-upload-single-input'>
                         <label htmlFor="price"><b>Price</b></label>
                         <input
                             id='price'
-                            className="UploadAdInput"
+
                             type="text"
                             name="price"
                             required
@@ -121,11 +121,11 @@ export const CreatePartAd = () => {
                         {error.price && <p className='Validation'>Add valid price!</p>}
                     </div>
 
-                    <div className='InputSections'>
+                    <div className='part-upload-single-input'>
                         <label htmlFor="description"><b>Description</b></label>
                         <input
                             id='description'
-                            className="UploadAdInput"
+
                             type="text"
                             name="description"
                             required
@@ -134,11 +134,11 @@ export const CreatePartAd = () => {
 
                         />
                     </div>
-                    <div className='InputSections'>
+                    <div className='part-upload-single-input'>
                         <label htmlFor="phone"><b>Phone number</b></label>
                         <input
                             id='phone'
-                            className="UploadAdInput"
+
                             type="text"
                             name="phone"
                             required
@@ -146,10 +146,10 @@ export const CreatePartAd = () => {
                             onChange={onChangeHandler}
                             onBlur={priceAndPhoneCheck}
                         />
-                        {error.phone && <p className='Validation'>The phone number is not valid!</p>}
+                        {error.phone && <p className='data-validation'>The phone number is not valid!</p>}
                     </div>
-                    <div className='InputSections'>
-                        <button className="UploadAdBtm">Upload</button>
+                    <div className='part-upload-single-input'>
+                        <button className="part-upload-btn">Upload</button>
                     </div>
                 </div>
             </form >
