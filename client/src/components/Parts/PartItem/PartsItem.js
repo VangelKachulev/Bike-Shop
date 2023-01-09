@@ -2,24 +2,19 @@ import { Link } from "react-router-dom";
 import "./partsItem.css";
 
 export const PartsItem = ({ data }) => {
-    
+
     return (
-        <div className="PartDiv">
+        <div className="single-part-main">
 
-            <ul className="ListItem">
+            <div className="part-image-containter">
+                <img src={data.imageUrl} />
+            </div>
 
-                <div className="PartImageDiv">
-                    <img className="CovePartImage" src={data.imageUrl} />
-                </div>
-                <div className="PartsInfo">
-                    <h2>{data.type}</h2>
-                    <h3 className="FrameSize">{data.brand}</h3>
-                    <h3 className="Price">${data.price}</h3>
+            <h2>{data.type}</h2>
+            <h3 >{data.brand}</h3>
+            <h3 >${data.price}</h3>
 
-                    <Link to={`/parts/${data._id}`} className="MoreInfoBtn" >More info</Link>
-
-                </div>
-            </ul>
+            <Link to={`/parts/${data._id}`} className="more-infot-btn" >More info</Link>
         </div >
     )
 }

@@ -29,18 +29,21 @@ export const PartsList = () => {
         filteredParts = [];
     }
     return (
-        <div className="AllPartsMainDiv">
+        <div className="parts-main">
 
-            <div>
-                <h1 className="AllListedParts">ALL LISTED BIKE PARTS</h1>
-                <div className="SearchBox">
-                        <input className="SearchInput" placeholder="Search..." name="searchBox" onChange={setQuery} />
 
-                    </div>
+            <h1 className="all-listed-parts">ALL LISTED BIKE PARTS</h1>
+            <div className="parts-search-box">
+                <input placeholder="Search..." name="searchBox" onChange={setQuery} />
+
+            </div>
+            <div className="parts-list">
                 {filteredParts.length > 0
                     ? filteredParts.map(part => <PartsItem key={part._id} data={part}></PartsItem>)
-                    : <h1 className="NoPartsToShow">Nothing to show</h1>}
+                    : <h1 className="no-parts">Nothing to show</h1>}
             </div>
+
+
 
         </div >
     )

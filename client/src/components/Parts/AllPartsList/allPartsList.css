@@ -1,21 +1,44 @@
-.AllListedParts {
-    color: rgb(0, 0, 0);
+.parts-main {
+    background-image: url('./Parts.jpg');
+    max-width: 1920px;
+    height: 100vh;
+    position: relative;
+}
+
+.all-listed-parts {
+    width: 100%;
+    color: rgba(0, 0, 0, 0.848);
     text-align: center;
     font-family: fantasy;
     font-size: 35px;
-    background-color: rgba(245, 245, 245, 0.524);
-    margin-top: 5px;
+    background-color: rgba(210, 204, 204, 0.437);
+
 }
 
-.AllPartsMainDiv {
-    background-image: url('./Parts.jpg');
-    width: 1900px;
-    height: 830px;
-    padding-top: 1px;
+.parts-search-box {
+    margin: 1rem 2rem;
 }
-.NoPartsToShow {
+
+.parts-search-box input {
+    padding: 5px 10px 5px 20px;
+    font-size: 20px;
+    width: 290px;
+    border: 2px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.no-parts {
     color: white;
     text-align: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-top: 50px;
+}
+
+.parts-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }

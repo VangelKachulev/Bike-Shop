@@ -1,5 +1,5 @@
 .login-background {
-    width: 1920px;
+    max-width: 1920px;
     height: 100vh;
     background-image: url('https://wallpaperaccess.com/full/28999.jpg');
 
