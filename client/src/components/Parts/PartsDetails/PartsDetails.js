@@ -67,38 +67,41 @@ export const PartDetails = () => {
 
 
     return (
-        <div className='MainPartSection'>
-            <div className='PartImageContainer'>
-                <img className='ContainerImage' src={partInfo.imageUrl} alt={`Not found`}></img>
+        <div className='part-details-main'>
+            <div className='part-content'>
+                <div className='part-image-container'>
+                    <img className='ContainerImage' src={partInfo.imageUrl} alt={`Not found`}></img>
 
+                </div>
+
+                <div className='part-data'>
+
+                    <h1 >{partInfo.brand}</h1>
+                    <h2>{partInfo.type}</h2>
+                    <h2>Price: ${partInfo.price}</h2>
+
+                    <h4 >Description :</h4>
+                    <p >{partInfo.description}</p>
+                    <h3> Owner's phone: {partInfo.phone}</h3>
+
+                    {(userData._id === partInfo._ownerId)
+                        && <div className='part-owner-btn'>
+                            <Link to={`/parts/${partInfo._id}/edit`} state={{ partInfo: partInfo }} className='part-details-buttons'>EDIT </Link>
+                            <button onClick={deletPartAd} className='part-details-buttons'>DELETE</button>
+
+                        </div>
+                    }
+                </div>
             </div>
-            <div className='PartTextContainter'>
-
-                <h1 className='BrandNamePart'>{partInfo.brand}</h1>
-                <h2>{partInfo.type}</h2>
-                <h2>Price: ${partInfo.price}</h2>
-
-                <h4 >Description :</h4>
-                <p className='DescriptionPart'>{partInfo.description}</p>
-                <h3> Owner's phone: {partInfo.phone}</h3>
-
-                {(userData._id === partInfo._ownerId)
-                    && <div>
-                        <Link to={`/parts/${partInfo._id}/edit`} state={{ partInfo: partInfo }} className='PartOptionButtons'>EDIT </Link>
-                        <button onClick={deletPartAd} className='PartOptionButtons'>DELETE</button>
-
-                    </div>
-                }
-            </div>
-            <div className="PartCommentSection">
-                <h2>Comments:</h2>
+            <div className="part-comment-section">
+                <h2 className='part-comment-section-title'>Comments:</h2>
 
                 <ul >
 
                     {(currentComents?.map(x => partInfo._id === x.partId
-                        && <li className="SingleComment" key={x._id}>
-                            <h3 className="CommentAuthorPart" >{x.author}:</h3>
-                            <p className="CommentText">{x.comment}</p>
+                        && <li className="part-single-comment" key={x._id}>
+                            <h3 className="comment-author" >{x.author}:</h3>
+                            <p className="comment-text">{x.comment}</p>
                         </li>))
                         || (<h1>No comments</h1>)
 
@@ -106,11 +109,11 @@ export const PartDetails = () => {
                 </ul>
             </div>
             {userData.accessToken ?
-                <div className="MainComentSectionParts">
+                <div className="part-main-comment-section">
 
                     <form onSubmit={addCommentHandler}>
                         <input
-                            className="InputAreaComment"
+                            className="part-text-area"
                             name='comment'
                             placeholder="Add new comment.."
                             onChange={onCommentChange}
@@ -119,7 +122,7 @@ export const PartDetails = () => {
                         </input>
                         <button
                             disabled={!commentInput.comment}
-                            className="AddCommentButton"
+                            className="part-add-comment"
                             type="submit"
                             value='Add comment'> Comment
                         </button>

@@ -1,41 +1,48 @@
-.MainPartSection {
-    display: block;
-    width: 1900px;
-    height: auto;
-    max-height: max-content;
+.part-details-main {
+    height: 80vh;
 }
 
-.PartTextContainter {
-    text-align: center;
-    display: inline-block;
-    font-size: 30px;
-    width: 400px;
-    margin: 0px 400px 20px 200px;
-    font-family: monospace;
+.part-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 30px;
 }
-
-.PartImageContainer {
-    width: 500px;
-    height: 500px;
-    padding: 35px 80px 0px 300px;
-    display: inline-block;
-    margin-top: 20px;
+.part-image-container {
+    margin: 0 auto;
+    width: 50%;
+    height: 50vh;
 }
-
-.ContainerImage {
-    width: 120%;
-    border-radius: 30px;
-    height: 100%;
-    object-fit: cover;
+.part-image-container img {
+    width: 100%;
+    width: 100%;
+    object-fit: scale-down;
 }
+.part-data {
+    font-family: 'Montserrat', cursive;
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center
+}
+.part-owner-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
 
-.PartOptionButtons {
-    padding: 10px 25px 10px 25px;
-    margin: 0px 20px 0px 0px;
+} 
+.part-details-buttons {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    padding: 0.5rem 1rem;
     border-radius: 30px;
     border: 2px solid black;
     font-family: monospace;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: bold;
     background-color: #156749bf;
     color: white;
@@ -43,51 +50,70 @@
     text-decoration: none;
 }
 
-.BrandNamePart {
-    font-family: fantasy;
+    
+.part-comment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 20px;
+
 }
 
-.DescriptionPart {
-    font-style: italic;
-}
-.PartCommentSection {
+.part-comment-section-title {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 90%;
+    text-align: center;
+    font-family: 'Montserrat', cursive;
     border-radius: 20px;
-    border: 1px solid black;
-    margin: 5px 61px 25px 60px;
-    font-family: monospace;
-    padding: 16px 20px 21px 20p
+    font-weight: 600;
 }
 
-.SingleComment {
+.part-single-comment {
     border-radius: 20px;
-    display: block;
-    border: 1px solid black;
-    margin: 11px 37px 0px -1px;
-    padding: 3px 30px 10px 29px;
-    background-color: rgba(255, 228, 196, 0.571);
+    list-style-type: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 40%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 28%, rgba(253, 187, 45, 0.4150035014005602) 100%);
     color: black;
-    font-size: 15px;
+    height: 4rem;
+    font-size: 1rem;
+    padding: 10px;
 }
 
-.MainComentSectionParts {
+.part-comment-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 70px;
+    /* text-align: center; */
+    width: 100%;
+    gap: 10px;
+}
+
+.part-main-comment-section {
     display: block;
-    height: 200px;
+    height: 300px;
+
 }
 
-.InputAreaComment {
-    width: 600px;
-    height: 100px;
-    margin: 11px 49px 2px 65px;
-    border: 1px solid black;
+.part-text-area {
+    width: 30%;
+    height: 6rem;
+    margin-left: 7rem;
+    margin-right: 2rem;
+    border: 2px solid black;
     border-radius: 25px;
 }
 
-.AddCommentButton {
-    padding: 10px 25px 10px 25px;
-    border-radius: 20px;
-    border: 1px solid black;
+.part-add-comment {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    border: 2px solid black;
     font-family: monospace;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: bold;
     background-color: #156749bf;
     color: white;
@@ -95,12 +121,12 @@
     text-decoration: none;
 }
 
-.CommentAuthorPart {
+.comment-author {
     font-family: monospace;
     text-transform: capitalize;
 }
 
-.CommentText {
+.comment-text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
 }
