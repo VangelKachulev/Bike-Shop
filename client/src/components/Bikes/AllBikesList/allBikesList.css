@@ -44,6 +44,7 @@
 
 .bike-item-list {
     width: 100%;
+   
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -51,4 +52,5 @@
     justify-content: flex-start;
     gap: 1rem;
     margin: 1.5rem 2.5rem;
+    padding-bottom: 5rem;
 }

@@ -1,7 +1,9 @@
 .my-ads-main {
     background-image: url('./second.jpg');
-    max-width: 1920px;
+    background-repeat:repeat;
+    max-width: auto;
     height: 100vh;
+    
     position: relative;
 }
 
@@ -26,5 +28,5 @@
     justify-content: flex-start;
     gap: 1rem;
     margin: 5rem 2.5rem;
-    /* margin-top: 5rem; */
+    padding-bottom: 5rem;
 }
