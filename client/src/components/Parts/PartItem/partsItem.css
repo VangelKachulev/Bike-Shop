@@ -3,17 +3,17 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(252,252,252,1) 85%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 50%, rgba(221, 203, 162, 1) 100%);
     width: 290px;
-    color: whitesmoke;
+    color: black;
     height: auto;
     background-color: whitesmoke;
     border-radius: 20px;
     overflow: hidden;
-    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0.5rem 0.8rem;
+    /* margin: 0.5rem 0.5rem; */
 }
 
 .part-image-containter {

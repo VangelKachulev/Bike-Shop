@@ -37,9 +37,13 @@
 }
 
 .parts-list {
+    width: 100%;
+    position: absolute;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* justify-content: center */
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 0 2.5rem;
    
 }

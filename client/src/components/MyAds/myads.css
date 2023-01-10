@@ -1,0 +1,30 @@
+.my-ads-main {
+    background-image: url('./second.jpg');
+    max-width: 1920px;
+    height: 100vh;
+    position: relative;
+}
+
+.my-active-ads {
+    background-color: rgba(255, 255, 255, 0.562);
+    position: absolute;
+    top: 1rem;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+
+    font-family: fantasy;
+    margin-bottom: 10px;
+}
+
+.my-add-section {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 5rem 2.5rem;
+    /* margin-top: 5rem; */
+}

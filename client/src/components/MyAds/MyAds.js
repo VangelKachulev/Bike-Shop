@@ -3,8 +3,9 @@ import { BikeContext } from "../../contexts/BikeContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import { BikeItem } from "../Bikes/Bike-item/BikeItem";
 import { PartsItem } from "../Parts/PartItem/PartsItem";
-import styles from './myads.module.css';
+// import './myads.module.css';
 import { PartsContext } from "../../contexts/PartsContext";
+import './myads.css'
 
 export const MyAds = () => {
     const { bikes } = useContext(BikeContext);
@@ -15,20 +16,20 @@ export const MyAds = () => {
     const myBikes = bikes.filter(x => x._ownerId === userData._id);
     const myParts = parts.filter(x => x._ownerId === userData._id);
 
-    return (<div className={styles.MyAds}>
+    return (<div className="my-ads-main">
 
         {(myBikes.length > 0 || myParts.length > 0)
 
             && <div>
-                < h1 className={styles.MyActiveAds}>My active ads</h1>
-                <div className={styles.MyItemsSection}>
+                < h1 className="my-active-ads">My active ads</h1>
+                <div className="my-add-section">
                     {myBikes.map(x => <BikeItem key={x._id} data={x}></BikeItem>)}
                     {myParts.map(x => <PartsItem key={x._id} data={x}></PartsItem>)}
                 </div>
             </div>
 
             || <div>
-                (<h1 className={styles.MyActiveAds}>You don't have any active ads</h1>)
+                (<h1 className="MyActiveAds">You don't have any active ads</h1>)
 
             </div>}
     </div >)
