@@ -5,9 +5,9 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { MyProfile } from '../MyProfile/MyProfile';
 
 export function Header() {
-    const { token } = useContext(AuthContext);
+    const { token, userData } = useContext(AuthContext);
     const [open, setOpen] = useState(false);
-
+console.log(userData);
     return (
 
         <nav className='header'>

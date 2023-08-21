@@ -32,6 +32,9 @@
     border-radius: 20px;
     margin-left: 1rem;
 }
+.logo:hover{
+    
+}
 
 i:hover {
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 1%, rgba(128, 128, 128, 1) 64%);
@@ -57,11 +60,15 @@ i:hover {
     border-radius: 15px;
 }
 
-.nav li:hover,
+.nav li:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 1%, rgba(128, 128, 128, 1) 64%);
+    text-shadow: 6px -1px 14px rgba(227, 227, 227, 0.78);
+   
+}
 
 .logo:hover {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 1%, rgba(128, 128, 128, 1) 64%);
     text-decoration: none;
+    text-shadow: 6px -1px 14px rgba(227, 227, 227, 0.78);
 }
 
 .on {
@@ -84,10 +91,11 @@ i:hover {
     
 }
 .inactive{
-    padding: 0.5rem 1rem !important;
+    padding: 0 !important;
     display: none;
     
 }
 .fa-user {
+    margin: 0 !important;
     color: #eebb02;
 }
