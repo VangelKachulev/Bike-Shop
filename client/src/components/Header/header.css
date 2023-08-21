@@ -81,6 +81,7 @@ i:hover {
 }
 .active {
     padding: 0 !important;
+    
 }
 .inactive{
     padding: 0.5rem 1rem !important;

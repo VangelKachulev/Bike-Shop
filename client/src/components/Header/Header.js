@@ -7,7 +7,7 @@ import { MyProfile } from '../MyProfile/MyProfile';
 export function Header() {
     const { token } = useContext(AuthContext);
     const [open, setOpen] = useState(false);
-    
+
     return (
 
         <nav className='header'>
@@ -17,27 +17,25 @@ export function Header() {
 
             {token ?
                 <ul className="nav">
-                    <li onClick={() => { setOpen(false) }}><NavLink className={(link) => (link.isActive ? "on" : "of")} to='/bikes'>Bikes</NavLink ></li>
-                    <li onClick={() => { setOpen(false) }}><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/parts">Parts</NavLink></li>
-                    <li onClick={() => { setOpen(false) }}><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/createBikeAd">Upload</NavLink></li>
-                    <li onClick={() => { setOpen(false) }}><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/myads">My-Ads</NavLink></li>
-                    <li onClick={() => { setOpen(false) }}><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/logout">Logout</NavLink></li>
-                    <li onClick={() => { setOpen(!open) }}><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/about">About</NavLink></li>
-                    <li onClick={() => {setOpen(true) }}><NavLink onClick={(e)=>e.preventDefault()} className={(link) => (link.isActive ? "on" : "of")} to="">My Profile</NavLink></li>
+                    <li onClick={() => { setOpen(false) }}><NavLink className="of" to='/bikes'>Bikes</NavLink ></li>
+                    <li onClick={() => { setOpen(false) }}><NavLink className="of" to="/parts">Parts</NavLink></li>
+
+                    <li onClick={() => { setOpen(false) }}><NavLink className="of" to="/about">About</NavLink></li>
+                    <li onClick={() => { setOpen(!open) }}><NavLink onClick={(e) => e.preventDefault()} className="of" to="">My Profile</NavLink></li>
                     <li className={`dropdown ${open ? 'active' : 'inactive'}`}>
-                        <ul>
-                            <MyProfile />
-                        </ul>
+
+                        <MyProfile />
+
                     </li>
 
                 </ul>
 
                 : <ul className="nav">
 
-                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to='/bikes'>Bikes</NavLink></li>
-                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/parts">Parts</NavLink></li>
-                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/login">Login</NavLink></li>
-                    <li><NavLink className={(link) => (link.isActive ? "on" : "of")} to="/about">About</NavLink></li>
+                    <li><NavLink className="of" to='/bikes'>Bikes</NavLink></li>
+                    <li><NavLink className="of" to="/parts">Parts</NavLink></li>
+                    <li><NavLink className="of" to="/login">Login</NavLink></li>
+                    <li><NavLink className="of" to="/about">About</NavLink></li>
                 </ul>
             }
         </nav>

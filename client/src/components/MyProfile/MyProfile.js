@@ -1,12 +1,15 @@
-import { MyAds } from "../MyAds/MyAds";
+import { NavLink } from "react-router-dom";
+
 import './MyProfile.css';
 
 export function MyProfile() {
 
 
     return (
-        <div className="myprofile">
-            <h1>myProfile</h1>
-        </div>
+        <ul className="myprofile">
+            <li><NavLink to="/myads">My-Ads</NavLink></li>
+            <li><NavLink to="/createBikeAd">Upload</NavLink></li>
+            <li><NavLink to="/logout">Logout</NavLink></li>
+        </ul>
     )
 }

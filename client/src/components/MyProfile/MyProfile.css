@@ -1,8 +1,10 @@
 .myprofile {
-    background-color: red;
+    background-color: rgb(232, 220, 220);
+    border-radius: 1rem;
+    border: 2px solid black;
     position: absolute;
     top: 90px;
     right: 20px;
     width: 200px;
-    height: 200px;
+    height: auto;
 }
