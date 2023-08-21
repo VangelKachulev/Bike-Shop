@@ -24,6 +24,7 @@ import { EditBikeAd } from './components/EDIT/EditBikeAd/EditBikeAd';
 
 import { MyAds } from './components/MyAds/MyAds';
 import { PrivateGuard } from './PrivateGuard/PrivateGuard';
+import { MyProfile } from './components/MyProfile/MyProfile';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
 
               <Route element={<PrivateGuard />}>
                 <Route path='/myads' element={<MyAds />}></Route>
+
                 <Route path='/bikes/:id/edit' element={<EditBikeAd />}></Route>
                 <Route path='/createBikeAd' element={<CreateBikeAd />}></Route>
                 <Route path='/parts/:id/edit' element={<EditPartAd />}></Route>

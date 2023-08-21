@@ -9,6 +9,7 @@
 
 .header {
     display: flex;
+    
     justify-content: space-between;
     align-items: center;
     background-color: black;
@@ -77,4 +78,12 @@ i:hover {
     font-weight: bold;
     letter-spacing: 2px;
 
+}
+.active {
+    padding: 0 !important;
+}
+.inactive{
+    padding: 0.5rem 1rem !important;
+    display: none;
+    
 }
