@@ -7,4 +7,25 @@
     right: 20px;
     width: 200px;
     height: auto;
+    padding: 0.5rem 0.2rem;
+}
+
+.my-profile-items {
+    list-style-type: none;
+    text-decoration: none;
+    padding: 1rem 1rem;
+    border-radius: 15px;
+    color: black;
+}
+
+.fa-solid {
+    margin-right: 10px  ;
+}
+
+.fa-solid:hover {
+    color: #eebb02;
+}
+
+.my-profile-items:hover {
+    color: white;
 }

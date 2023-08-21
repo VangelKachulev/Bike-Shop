@@ -21,7 +21,7 @@ export function Header() {
                     <li onClick={() => { setOpen(false) }}><NavLink className="of" to="/parts">Parts</NavLink></li>
 
                     <li onClick={() => { setOpen(false) }}><NavLink className="of" to="/about">About</NavLink></li>
-                    <li onClick={() => { setOpen(!open) }}><NavLink onClick={(e) => e.preventDefault()} className="of" to="">My Profile</NavLink></li>
+                    <li onClick={() => { setOpen(!open) }}><NavLink onClick={(e) => e.preventDefault()} className="of" to=""><i class="fa-solid fa-user"></i></NavLink></li>
                     <li className={`dropdown ${open ? 'active' : 'inactive'}`}>
 
                         <MyProfile />
