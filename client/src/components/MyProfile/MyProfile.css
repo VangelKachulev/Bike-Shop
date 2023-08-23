@@ -19,7 +19,9 @@
     color: black;
 
 }
-
+.my-profile-items:hover{
+    color: whitesmoke;
+}
 .fa-solid {
     margin-right: 10px;
 }
