@@ -24,7 +24,7 @@ import { EditBikeAd } from './components/EDIT/EditBikeAd/EditBikeAd';
 
 import { MyAds } from './components/MyAds/MyAds';
 import { PrivateGuard } from './PrivateGuard/PrivateGuard';
-import { MyProfile } from './components/MyProfile/MyProfile';
+
 
 function App() {
   return (
